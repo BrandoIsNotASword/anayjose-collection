@@ -1,44 +1,101 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { DatePicker } from 'antd'
+import { DatePicker, DayOfWeek } from 'office-ui-fabric-react'
+
+const DAY_PICKER_STRINGS = {
+  months: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ],
+
+  shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+
+  days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+
+  shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+
+  goToToday: 'Go to today',
+  prevMonthAriaLabel: 'Go to previous month',
+  nextMonthAriaLabel: 'Go to next month',
+  prevYearAriaLabel: 'Go to previous year',
+  nextYearAriaLabel: 'Go to next year',
+  closeButtonAriaLabel: 'Close date picker',
+  isRequiredErrorMessage: 'Field is required.',
+  invalidInputErrorMessage: 'Invalid date format.',
+}
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 
-  .ant-input-wrapper {
+  .ms-TextField-fieldGroup {
+    height: 40px;
+    border-radius: 3px;
+    border-color: darkgray;
     display: flex;
-    flex-direction: column;
+    align-items: center;
   }
 
-  .ant-input-group-addon {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    margin-bottom: 3px;
-    width: fit-content;
+  .ms-TextField-field {
+    height: 100%;
   }
 
-  .ant-input-group-description {
-    font-size: 0.75em;
-    color: rgba(0, 0, 0, 0.5);
-    text-align: right;
-    align-self: flex-end;
-    margin-top: 2px;
+  .ms-TextField-description {
+    font-size: 12px;
+    height: 17px;
+    margin-top: 5px;
   }
 
-  .ant-input {
-    border-radius: 3px !important;
+  .ms-TextField-errorMessage span {
+    font-size: 12px;
   }
 `
 
-function Datepicker({ className, label, description }) {
+const StyledInput = styled.input`
+  height: 40px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: ${(props) => (props.hasLabel ? '26px' : '0')};
+  pointer-events: none;
+  opacity: 0;
+`
+
+function Datepicker(props) {
+  const { className, description, onChange, ...restProps } = props
+
   return (
     <Wrapper className={className}>
-      <span className="ant-input-group-addon">{label}</span>
-      <DatePicker size="large" label="Second date" />
-      <span className="ant-input-group-addon ant-input-group-description">{description}</span>
+      <StyledInput
+        required={restProps.isRequired}
+        type="text"
+        value={restProps.value}
+        hasLabel={restProps.label}
+        onChange={() => {}}
+      />
+      <DatePicker
+        minDate={new Date()}
+        showGoToToday={false}
+        firstDayOfWeek={DayOfWeek.Monday}
+        strings={DAY_PICKER_STRINGS}
+        ariaLabel={restProps.label}
+        showMonthPickerAsOverlay
+        onSelectDate={onChange}
+        {...restProps}
+      />
+      {description && <span className="ms-TextField-description">{description}</span>}
     </Wrapper>
   )
 }

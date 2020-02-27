@@ -1,24 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button } from 'antd'
+import { PrimaryButton } from 'office-ui-fabric-react'
 
 const Wrapper = styled.div`
   width: 100%;
 
-  .ant-btn {
+  .ms-Button--primary {
+    height: 40px;
+    width: 100%;
+    border-radius: 100px;
     background-color: #3a5544;
     border-color: #3a5544;
-    font-weight: 500;
+  }
+
+  .ms-Button.is-disabled {
+    background-color: rgb(243, 242, 241);
+    border-color: rgb(243, 242, 241);
   }
 `
 
-function StyledButton({ children }) {
+function StyledButton(props) {
   return (
     <Wrapper>
-      <Button type="primary" size="large" shape="round" block>
-        {children}
-      </Button>
+      <PrimaryButton {...props}>{props.children}</PrimaryButton>
     </Wrapper>
   )
 }

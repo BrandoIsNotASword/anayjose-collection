@@ -2,31 +2,32 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Input } from 'antd'
+import { TextField } from 'office-ui-fabric-react/lib/TextField'
 
 const Wrapper = styled.span`
-  .ant-input-wrapper {
-    display: flex;
-    flex-direction: column;
+  .ms-TextField-field {
+    padding-right: 30px;
   }
 
-  .ant-input-group-addon {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    margin-bottom: 3px;
-    width: fit-content;
+  .ms-TextField-fieldGroup {
+    height: 40px;
+    border-radius: 3px;
+    border-color: darkgray;
+
+    i {
+      bottom: 10px;
+    }
   }
 
-  .ant-input {
-    border-radius: 3px !important;
+  .ms-TextField-errorMessage span {
+    font-size: 12px;
   }
 `
 
-function StyledInput({ className, label, placeholder }) {
+function StyledInput(props) {
   return (
-    <Wrapper className={className}>
-      <Input size="large" addonBefore={label} placeholder={placeholder} />
+    <Wrapper className={props.className}>
+      <TextField {...props} />
     </Wrapper>
   )
 }

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import styled from 'styled-components'
 
+import SEO from '../components/seo'
+import FormWedding from '../components/formWedding'
 import Layout from '../components/layout'
-import Input from '../components/input'
-import DatePicker from '../components/datePicker'
-import Button from '../components/button'
 
 import logoPromo from '../images/logo-wedding-paradise.png'
 
@@ -39,67 +39,17 @@ const H1 = styled.h1`
   }
 `
 
-const TermMessage = styled.span`
-  font-size: 0.75em;
-  text-align: center;
-  margin-top: 5px;
-`
-
-const RowInputs = styled.div`
-  display: flex;
-  margin-bottom: 10px;
-  flex-direction: column;
-
-  & > div,
-  & > span {
-    flex: 1;
-  }
-
-  & > div:not(:first-child),
-  & > span:not(:first-child) {
-    margin-left: 0px;
-    margin-top: 10px;
-  }
-
-  @media (min-width: 640px) {
-    flex-direction: row;
-
-    & > div:not(:first-child),
-    & > span:not(:first-child) {
-      margin-left: 5px;
-      margin-top: 0;
-    }
-  }
-`
-
 function IndexPage() {
+  const intl = useIntl().formatMessage
+
   return (
     <Layout>
-      <LogoPromo src={logoPromo} alt="Ana y José Wedding Promo" />
-      <H1>GET MARRIED IN MAY, JUN, SEPT OR OCT AND GET A SPECIAL RATE!</H1>
+      <SEO title={intl({ id: 'title' })} description={intl({ id: 'description' })} />
+      <LogoPromo src={logoPromo} alt={intl({ id: 'logoAlt' })} />
+      <H1>{intl({ id: 'h1' })}</H1>
       <SectionForm>
-        <RowInputs>
-          <Input label="Couple's name" />
-          <Input label="Country" />
-        </RowInputs>
-        <RowInputs>
-          <Input label="Phone number" />
-          <Input label="Email" />
-        </RowInputs>
-        <RowInputs>
-          <DatePicker label="Date" />
-          <DatePicker
-            label="Second date"
-            description="Just in case the first date is not available."
-          />
-        </RowInputs>
-        <RowInputs>
-          <Input type="number" label="Number of guests" />
-          <Input label="Type of ceremony" placeholder="Catholic, jewish, muslim, etc." />
-        </RowInputs>
-        <Button>Start planning</Button>
+        <FormWedding hideOnSuccess />
       </SectionForm>
-      <TermMessage>Restrictions apply, rates subject to last minute changes.</TermMessage>
     </Layout>
   )
 }

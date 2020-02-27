@@ -1,11 +1,14 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import PropTypes from 'prop-types'
+import { initializeIcons } from '@uifabric/icons'
 
 import Header from './header'
 import 'normalize.css'
 
 import bg from '../images/bg-wedding1.jpg'
+
+initializeIcons()
 
 const MIN_WIDTH = '768px'
 const MIN_WIDTH_MD = '1024px'
@@ -13,10 +16,23 @@ const MIN_WIDTH_MD = '1024px'
 const GlobalStyle = createGlobalStyle`
   * {
     font-size: 14px;
+    font-family: futura-pt, sans-serif;
     
     @media(min-width: ${MIN_WIDTH}) {
       font-size: 16px;
     }
+  }
+
+  .ms-DatePicker-day-button span {
+    font-size: 14px;
+  }
+
+  .ms-DatePicker-day {
+    border: 1px solid whitesmoke;
+  }
+
+  .ms-DatePicker-day--today {
+    background-color: transparent;
   }
 `
 
@@ -54,7 +70,7 @@ const Main = styled.main`
     padding-bottom: 25px;
     width: 500px;
     margin-left: 80px;
-    margin-top: 25px;
+    margin-top: 30px;
     background: transparent;
   }
 `
