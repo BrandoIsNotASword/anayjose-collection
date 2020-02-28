@@ -4,4 +4,16 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+import { renderStatic } from '@uifabric/merge-styles/lib/server'
+import { renderToString } from 'react-dom/server'
+import React from 'react'
+
+export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
+  const { html, css } = renderStatic(() => {
+    return renderToString(bodyComponent)
+  })
+
+  replaceBodyHTMLString(html)
+
+  setHeadComponents([<style dangerouslySetInnerHTML={{ __html: css }} />])
+}

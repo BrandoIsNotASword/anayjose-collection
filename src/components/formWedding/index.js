@@ -46,7 +46,7 @@ const SuccessMessage = styled.span`
 `
 
 const TermMessage = styled.span`
-  font-size: 0.75em;
+  font-size: 14px;
   text-align: center;
   margin-top: 5px;
   display: block;

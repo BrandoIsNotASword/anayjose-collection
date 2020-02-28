@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/weddingsdeal`,
   siteMetadata: {
     title: `Ana y José Tulum`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -41,7 +42,7 @@ module.exports = {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `es`],
         defaultLanguage: `en`,
-        redirect: true,
+        redirect: false,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
