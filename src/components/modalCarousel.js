@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import uuid from 'uuid'
 import styled from 'styled-components'
 import Carousel from 'nuka-carousel'
@@ -44,6 +45,8 @@ const CloseModal = styled.div`
 `
 
 function GalleryCarousel({ isOpen, selectedImage, gallery, onCloseModal }) {
+  const intl = useIntl().formatMessage
+
   useEffect(() => {
     document.addEventListener('keydown', keyPressHandler)
     return () => {
@@ -59,7 +62,15 @@ function GalleryCarousel({ isOpen, selectedImage, gallery, onCloseModal }) {
 
   return (
     <Wrapper>
-      <Carousel enableKeyboardControls autoGenerateStyleTag={false} slideIndex={selectedImage}>
+      <Carousel
+        enableKeyboardControls
+        autoGenerateStyleTag={false}
+        slideIndex={selectedImage}
+        defaultControlsConfig={{
+          nextButtonText: intl({ id: 'nextSlide' }),
+          prevButtonText: intl({ id: 'prevSlide' }),
+        }}
+      >
         {gallery.map((image) => (
           <Slide key={uuid.v4()}>
             <Image src={image} />

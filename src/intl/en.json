@@ -22,5 +22,7 @@
     "descriptionTypeOfCeremony": "Catholic, jewish, muslim, etc.",
     "button": "Start planning",
     "terms": "Restrictions apply, rates subject to last minute changes."
-  }
+  },
+  "nextSlide": "Next",
+  "prevSlide": "Prev"
 }

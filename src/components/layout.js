@@ -8,12 +8,12 @@ import ModalCarousel from './modalCarousel'
 import 'normalize.css'
 
 import bg from '../images/bg-wedding1.jpg'
-import gallery1 from '../images/1gallery.png'
-import gallery2 from '../images/2gallery.png'
-import gallery3 from '../images/3gallery.png'
-import gallery4 from '../images/4gallery.png'
-import gallery5 from '../images/5gallery.png'
-import gallery6 from '../images/6gallery.png'
+import gallery1 from '../images/1gallery.jpg'
+import gallery2 from '../images/2gallery.jpg'
+import gallery3 from '../images/3gallery.jpg'
+import gallery4 from '../images/4gallery.jpg'
+import gallery5 from '../images/5gallery.jpg'
+import gallery6 from '../images/6gallery.jpg'
 
 initializeIcons()
 

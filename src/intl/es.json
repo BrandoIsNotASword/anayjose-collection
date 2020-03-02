@@ -22,5 +22,7 @@
     "descriptionTypeOfCeremony": "Católica, judía, musulmana, etc.",
     "button": "Empieza a planificar",
     "terms": "Se aplican restricciones, las tarifas están sujetas a cambios de última hora."
-  }
+  },
+  "nextSlide": "Siguiente",
+  "prevSlide": "Anterior"
 }
