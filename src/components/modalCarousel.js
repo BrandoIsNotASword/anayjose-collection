@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import uuid from 'uuid'
 import styled from 'styled-components'
+import Carousel from 'nuka-carousel'
 
 import { FontIcon } from 'office-ui-fabric-react/lib/Icon'
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { Carousel } from 'react-responsive-carousel'
-
 const Wrapper = styled.div`
-  visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: white;
   width: 100%;
   height: 100%;
-  padding: 5%;
+  padding: 15px 5%;
   box-sizing: border-box;
   top: 0;
   bottom: 0;
@@ -22,12 +19,15 @@ const Wrapper = styled.div`
 `
 
 const Slide = styled.div`
-  height: 500px;
-  width: auto;
-  background: url(${(props) => props.src});
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  height: 100vh;
+`
+
+const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 `
 
 const CloseModal = styled.div`
@@ -44,11 +44,26 @@ const CloseModal = styled.div`
 `
 
 function GalleryCarousel({ isOpen, selectedImage, gallery, onCloseModal }) {
+  useEffect(() => {
+    document.addEventListener('keydown', keyPressHandler)
+    return () => {
+      document.removeEventListener('keydown', keyPressHandler)
+    }
+  })
+
+  if (!isOpen) return null
+
+  const keyPressHandler = (e) => {
+    if (e.keyCode === 27) onCloseModal()
+  }
+
   return (
-    <Wrapper isOpen={isOpen}>
-      <Carousel selectedItem={selectedImage} showThumbs={false} showStatus={false}>
+    <Wrapper>
+      <Carousel enableKeyboardControls autoGenerateStyleTag={false} slideIndex={selectedImage}>
         {gallery.map((image) => (
-          <Slide key={uuid.v4()} src={image} />
+          <Slide key={uuid.v4()}>
+            <Image src={image} />
+          </Slide>
         ))}
       </Carousel>
       <CloseModal onClick={() => onCloseModal()}>
