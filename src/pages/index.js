@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import styled from 'styled-components'
 

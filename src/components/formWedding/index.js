@@ -197,7 +197,6 @@ function FormWedding({ hideOnSuccess, onSuccess }) {
               iconProps={{ iconName: 'Family' }}
             />
             <Input
-              label="Type of ceremony"
               label={intl({ id: 'formWedding.typeOfCeremony' })}
               iconProps={{ iconName: 'PageLink' }}
               name="typeOfCeremony"
