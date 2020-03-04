@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
+import Img from 'gatsby-image'
 import uuid from 'uuid'
 import styled from 'styled-components'
 import Carousel from 'nuka-carousel'
@@ -21,14 +22,9 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   height: 100vh;
-`
-
-const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const CloseModal = styled.div`
@@ -73,7 +69,7 @@ function GalleryCarousel({ isOpen, selectedImage, gallery, onCloseModal }) {
       >
         {gallery.map((image) => (
           <Slide key={uuid.v4()}>
-            <Image src={image} />
+            <Img alt="" imgStyle={{ objectFit: 'contain' }} fixed={image} />
           </Slide>
         ))}
       </Carousel>
