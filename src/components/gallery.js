@@ -5,28 +5,37 @@ import Img from 'gatsby-image'
 
 import ModalCarousel from './ModalCarousel'
 
-const MIN_WIDTH = '768px'
+const MIN_WIDTH = '680px'
+const MIN_WIDTH_GALLERY = '1024px'
 
 const Wrapper = styled.div`
   box-sizing: border-box;
   max-width: 1024px;
-  margin: 32px auto;
+  margin: 32px auto 0 auto;
 `
 
 const RowImages = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 1px;
+
+  @media (min-width: ${MIN_WIDTH}) {
+    margin-bottom: 8px;
+  }
 `
 
 const WrapperImage = styled.div`
-  height: 250px;
+  height: 300px;
   display: inline-block;
-  width: 33.33%;
+  width: 100%;
   border-left: 5px solid white;
   border-right: 5px solid white;
   box-sizing: border-box;
   cursor: pointer;
 
   @media (min-width: ${MIN_WIDTH}) {
+    width: 33.33%;
+  }
+
+  @media (min-width: ${MIN_WIDTH_GALLERY}) {
     width: ${(props) => (props.featured ? '50%' : '25%')};
   }
 

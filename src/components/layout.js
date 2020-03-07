@@ -37,6 +37,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const MainWrapper = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+`
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,16 +81,61 @@ const Main = styled.main`
   }
 `
 
+const Footer = styled.footer`
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 0.75em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: ${MIN_WIDTH}) {
+    flex-direction: row;
+    padding: 25px 80px;
+  }
+`
+
+const FooterColumn = styled.div`
+  display: flex;
+
+  a {
+    color: initial;
+    margin-left: 10px;
+  }
+`
+
 const Layout = ({ children }) => {
   return (
-    <>
+    <MainWrapper>
       <GlobalStyle />
       <Wrapper>
         <Header />
         <Main>{children}</Main>
       </Wrapper>
       <Gallery />
-    </>
+      <Footer>
+        <p>© Hotel Ana y José. All Rights Reserved.</p>
+        <FooterColumn>
+          <a
+            href="https://anayjose.com/reservation-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="layout__FooterLink-ii2kc2-6 hjydDq"
+          >
+            Reservation policy
+          </a>
+          <a
+            href="https://anayjose.com/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="layout__FooterLink-ii2kc2-6 hjydDq"
+          >
+            Privacy policy
+          </a>
+        </FooterColumn>
+      </Footer>
+    </MainWrapper>
   )
 }
 
