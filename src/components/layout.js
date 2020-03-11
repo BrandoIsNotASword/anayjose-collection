@@ -47,11 +47,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   background: url(${bg});
-  background-size: 150%;
   background-position: center top;
+  background-size: 100%;
   background-repeat: no-repeat;
 
-  @media (min-width: ${MIN_WIDTH}) {
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    background: url(${bg});
     background-size: cover;
   }
 `
@@ -65,9 +66,10 @@ const Main = styled.main`
   margin: 0;
   padding: 60px 25px 25px 25px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
 
   @media (min-width: ${MIN_WIDTH}) {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
     padding: 15% 15% 32px 15%;
   }
 
@@ -121,16 +123,10 @@ const Layout = ({ children }) => {
             href="https://anayjose.com/reservation-policy"
             target="_blank"
             rel="noopener noreferrer"
-            class="layout__FooterLink-ii2kc2-6 hjydDq"
           >
             Reservation policy
           </a>
-          <a
-            href="https://anayjose.com/privacy-policy"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="layout__FooterLink-ii2kc2-6 hjydDq"
-          >
+          <a href="https://anayjose.com/privacy-policy" target="_blank" rel="noopener noreferrer">
             Privacy policy
           </a>
         </FooterColumn>
