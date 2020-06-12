@@ -3,11 +3,13 @@ import styled, { createGlobalStyle } from 'styled-components'
 import { initializeIcons } from '@uifabric/icons'
 
 import Header from './header'
-import Gallery from './gallery'
+import Button from './button'
 
 import 'normalize.css'
 
-import bg from '../images/bg-wedding1.jpg'
+import bg from '../images/banner-background-desk.jpg'
+import promoLogo from '../images/friends-and-family.png'
+import promoLogoMobile from '../images/friends-and-family-mobile.png'
 
 initializeIcons()
 
@@ -24,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  p,
+  span {
+    max-height: 999999px;
+  }
+
   .ms-DatePicker-day-button span {
     font-size: 14px;
   }
@@ -38,21 +45,16 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const MainWrapper = styled.div`
-  max-width: 1440px;
   margin: 0 auto;
 `
 
+/* background: url(${bg}); */
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background: url(${bg});
-  background-position: center top;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  width: 100%;
 
   @media (min-width: ${MIN_WIDTH_MD}) {
-    background: url(${bg});
     background-size: cover;
   }
 `
@@ -62,24 +64,70 @@ const Main = styled.main`
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
-  height: fit-content;
-  margin: 0;
-  padding: 60px 25px 25px 25px;
+  margin: 0 auto;
+  padding: 25px;
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
+  max-width: 1280px;
+`
 
-  @media (min-width: ${MIN_WIDTH}) {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
-    padding: 15% 15% 32px 15%;
-  }
+const Hero = styled.div`
+  background-image: url(${bg});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 150px);
+  padding-top: 75px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
 
   @media (min-width: ${MIN_WIDTH_MD}) {
-    padding: 0;
-    padding-bottom: 25px;
-    width: 500px;
-    margin-left: 80px;
-    margin-top: 30px;
-    background: transparent;
+    min-height: auto;
+    height: 500px;
+  }
+`
+
+const HeroPromoMobile = styled.img`
+  max-width: 250px;
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    display: none;
+  }
+`
+
+const HeroPromo = styled.img`
+  max-width: 700px;
+  width: 85%;
+  margin: 0 auto;
+  display: none;
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    display: block;
+  }
+`
+
+const HeroButton = styled(Button)`
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+`
+
+const HeroTitle = styled.p`
+  color: white;
+  text-align: center;
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+  margin-top: 0px;
+
+  @media (min-width: ${MIN_WIDTH}) {
+    font-size: 1.75rem;
   }
 `
 
@@ -111,11 +159,16 @@ const Layout = ({ children }) => {
   return (
     <MainWrapper>
       <GlobalStyle />
+      <Header />
+      <Hero>
+        <HeroPromoMobile src={promoLogoMobile} />
+        <HeroPromo src={promoLogo} />
+        <HeroTitle>SÉ PARTE DE LA FAMILIA ANA Y JOSÉ</HeroTitle>
+        <HeroButton href="#form">Solicitar membresía</HeroButton>
+      </Hero>
       <Wrapper>
-        <Header />
         <Main>{children}</Main>
       </Wrapper>
-      <Gallery />
       <Footer>
         <p>© Hotel Ana y José. All Rights Reserved.</p>
         <FooterColumn>

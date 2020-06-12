@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import ModalCarousel from './ModalCarousel'
+import ModalCarousel from './modalCarousel'
 
 const MIN_WIDTH = '680px'
 const MIN_WIDTH_GALLERY = '1024px'
 
 const Wrapper = styled.div`
+  width: 100%;
   box-sizing: border-box;
-  max-width: 1024px;
+  max-width: 1280px;
   margin: 32px auto 0 auto;
 `
 
@@ -97,25 +98,25 @@ function Gallery() {
   return (
     <Wrapper>
       <RowImages>
-        <WrapperImage featured onClick={() => onOpenModal(0)}>
-          <Img objectFit="cover" alt="" fluid={data.imageOne.childImageSharp.fluid} />
+        <WrapperImage onClick={() => onOpenModal(0)}>
+          <Img objectFit="cover" alt="" fluid={data.imageThree.childImageSharp.fluid} />
         </WrapperImage>
-        <WrapperImage onClick={() => onOpenModal(1)}>
+        <WrapperImage featured onClick={() => onOpenModal(1)}>
           <Img objectFit="cover" alt="" fluid={data.imageTwo.childImageSharp.fluid} />
         </WrapperImage>
         <WrapperImage onClick={() => onOpenModal(2)}>
-          <Img objectFit="cover" alt="" fluid={data.imageThree.childImageSharp.fluid} />
+          <Img objectFit="cover" alt="" fluid={data.imageOne.childImageSharp.fluid} />
         </WrapperImage>
       </RowImages>
       <RowImages>
-        <WrapperImage onClick={() => onOpenModal(3)}>
-          <Img objectFit="cover" alt="" fluid={data.imageSix.childImageSharp.fluid} />
+        <WrapperImage featured onClick={() => onOpenModal(3)}>
+          <Img objectFit="cover" alt="" fluid={data.imageFour.childImageSharp.fluid} />
         </WrapperImage>
         <WrapperImage onClick={() => onOpenModal(4)}>
-          <Img objectFit="cover" alt="" fluid={data.imageFive.childImageSharp.fluid} />
+          <Img objectFit="cover" alt="" fluid={data.imageSix.childImageSharp.fluid} />
         </WrapperImage>
-        <WrapperImage featured onClick={() => onOpenModal(5)}>
-          <Img objectFit="cover" alt="" fluid={data.imageSeven.childImageSharp.fluid} />
+        <WrapperImage onClick={() => onOpenModal(5)}>
+          <Img objectFit="cover" alt="" fluid={data.imageFive.childImageSharp.fluid} />
         </WrapperImage>
       </RowImages>
 
@@ -123,13 +124,12 @@ function Gallery() {
         isOpen={openModal}
         selectedImage={selectedImage}
         gallery={[
-          data.imageOne.childImageSharp.fixed,
-          data.imageTwo.childImageSharp.fixed,
           data.imageThree.childImageSharp.fixed,
+          data.imageTwo.childImageSharp.fixed,
+          data.imageOne.childImageSharp.fixed,
+          data.imageFour.childImageSharp.fixed,
           data.imageSix.childImageSharp.fixed,
           data.imageFive.childImageSharp.fixed,
-          data.imageSeven.childImageSharp.fixed,
-          data.imageFour.childImageSharp.fixed,
         ]}
         onCloseModal={() => setOpenModal(false)}
       />

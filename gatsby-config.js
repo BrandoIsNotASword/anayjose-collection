@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: `/weddingsdeal`,
+  pathPrefix: `/friends-and-family`,
   siteMetadata: {
     title: `Ana y José Tulum`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Ahora puedes formar parte de nuestra familia Ana y José Collection.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mailchimp`,
       options: {
-        endpoint: `https://anayjose.us19.list-manage.com/subscribe/post?u=913dbc71926ff10619b39e45b&amp;id=7aa461bd38`,
+        endpoint: ``,
       },
     },
     {

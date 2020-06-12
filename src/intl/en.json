@@ -1,27 +1,22 @@
 {
-  "title": "Promoción de boda",
-  "description": "Celebrate your wedding in Ana y José Tulum",
-  "logoAlt": "Ana y José Wedding Promo",
-  "h1": "GET MARRIED IN MAY, JUN, SEPT OR OCT AND GET A SPECIAL RATE!",
+  "title": "Friends & Family",
+  "description": "Ahora puedes formar parte de nuestra familia Ana y José Collection",
+  "h1": "TO ACQUIRE THESE INCREDIBLE BENEFITS YOU JUST HAVE TO APPLY",
   "successMessage": {
     "main": "Thanks for your request!",
     "sub": "We'll get in touch as soon as posible."
   },
-  "formWedding": {
+  "formBenefits": {
     "required": "Required",
     "invalidEmail": "Invalid email address",
-    "couplesName": "Couple's name",
-    "country": "Country",
+    "name": "Name",
+    "city": "City",
     "phoneNumber": "Phone number",
     "email": "Email",
-    "firstDate": "First date",
-    "secondDate": "Second date",
-    "guests": "Number of guests",
-    "typeOfCeremony": "Type of ceremony",
-    "descriptionSecondDate": "Just in case the first date is not available.",
-    "descriptionTypeOfCeremony": "Religious, symbolic, mayan, etc.",
-    "button": "Start planning",
-    "terms": "Restrictions apply, rates subject to last minute changes."
+    "checkIn": "Check-In",
+    "checkOut": "Check-Out",
+    "button": "Send request",
+    "terms": "Limited promotion subject to availability. Not applicable with other promotions. Valid for one year. Booking window: June 1 to December 28, 2021. Travel window: June 1 to December 20, January 15 to March 25, April 12 to October 31, 2021, December 1 to December 15, 2021. 2 nights min. 4 pax max (2 bedrooms). Capacity limited to room type."
   },
   "nextSlide": "Next",
   "prevSlide": "Prev"

@@ -1,27 +1,22 @@
 {
-  "title": "Wedding Promo",
-  "description": "Celebra tu boda en Ana y José Tulum",
-  "logoAlt": "Ana y José Promoción de Boda",
-  "h1": "¡CÁSATE EN MAY, JUN, SEPT U OCT Y OBTÉN UNA TARIFA ESPECIAL!",
+  "title": "Amigos y Familiares",
+  "description": "Now you can be part of our family Ana and Jose Collection",
+  "h1": "PARA ADQUIRIR ESTOS INCREÍBLES BENEFICIOS SOLO DEBE SOLICITARLO",
   "successMessage": {
     "main": "¡Gracias por tu solicitud!",
-    "sub": "Nos contactaremos contigo lo antes posible."
+    "sub": "Nos pondremos en contigo lo antes posible."
   },
-  "formWedding": {
+  "formBenefits": {
     "required": "Requerido",
-    "invalidEmail": "Email inválido",
-    "couplesName": "Nombre de la pareja",
-    "country": "País",
+    "invalidEmail": "Correo inválido",
+    "name": "Nombre",
+    "city": "Ciudad",
     "phoneNumber": "Celular",
     "email": "Email",
-    "firstDate": "Primera fecha",
-    "secondDate": "Segunda fecha",
-    "guests": "Número de invitados",
-    "typeOfCeremony": "Tipo de ceremonia",
-    "descriptionSecondDate": "En caso de que la primera fecha no esté disponible.",
-    "descriptionTypeOfCeremony": "Religiosa, simbólica, maya, etc.",
-    "button": "Empieza a planificar",
-    "terms": "Se aplican restricciones, las tarifas están sujetas a cambios de última hora."
+    "checkIn": "Fecha de llegada",
+    "checkOut": "Fecha de salida",
+    "button": "Enviar solicitud",
+    "terms": "Promoción limitada sujeta a disponibilidad. No aplica con otras promociones. Válido por un año. Booking window: 1 de Junio al 28 de Diciembre 2021. Travel window: 1 de Junio al 20 de Diciembre, 15 de Enero hasta 25 Marzo, 12 Abril al 31 de Octubre 2021, 1 de Diciembre al 15 de Diciembre 2021. 2 noches min. 4 pax max (2 hab). Capacidad limitada al tipo de habitación."
   },
   "nextSlide": "Siguiente",
   "prevSlide": "Anterior"

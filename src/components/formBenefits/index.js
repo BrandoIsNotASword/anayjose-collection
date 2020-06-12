@@ -52,27 +52,27 @@ const TermMessage = styled.span`
   display: block;
 `
 
-function FormWedding({ hideOnSuccess, onSuccess }) {
+function FormBenefits({ hideOnSuccess, onSuccess }) {
   const intl = useIntl().formatMessage
   const [success, setSuccess] = useState(false)
 
   const onSubmit = async (values, { setSubmitting }) => {
-    const firstDate = values.firstDate.toLocaleDateString().split('/')
-    const secondDate =
-      values.secondDate !== '' ? values.secondDate.toLocaleDateString().split('/') : ['', '', '']
+    const checkIn = values.checkIn.toLocaleDateString().split('/')
+    const checkOut =
+      values.checkOut !== '' ? values.checkOut.toLocaleDateString().split('/') : ['', '', '']
 
     const res = await addToMailchimp(values.email, {
-      COUPLESNAM: values.couplesName,
-      COUNTRY: values.country,
+      COUPLESNAM: values.name,
+      COUNTRY: values.city,
       PHONENUMBE: values.phoneNumber,
       GUESTS: values.guests,
       TYPECEREMO: values.typeOfCeremony,
-      'FIRSTDATE[day]': firstDate[0],
-      'FIRSTDATE[month]': firstDate[1],
-      'FIRSTDATE[year]': firstDate[2],
-      'SECONDDATE[day]': secondDate[0],
-      'SECONDDATE[month]': secondDate[1],
-      'SECONDDATE[year]': secondDate[2],
+      'FIRSTDATE[day]': checkIn[0],
+      'FIRSTDATE[month]': checkIn[1],
+      'FIRSTDATE[year]': checkIn[2],
+      'SECONDDATE[day]': checkOut[0],
+      'SECONDDATE[month]': checkOut[1],
+      'SECONDDATE[year]': checkOut[2],
     })
 
     if (res.result === 'success') {
@@ -96,22 +96,20 @@ function FormWedding({ hideOnSuccess, onSuccess }) {
   return (
     <Formik
       initialValues={{
-        couplesName: '',
-        country: '',
+        name: '',
+        city: '',
         phoneNumber: '',
         email: '',
-        firstDate: '',
-        secondDate: '',
-        guests: 1,
-        typeOfCeremony: '',
+        checkIn: '',
+        checkOut: '',
       }}
       validate={(values) => {
         const errors = {}
 
         if (!values.email) {
-          errors.email = intl({ id: 'formWedding.required' })
+          errors.email = intl({ id: 'formBenefits.required' })
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-          errors.email = intl({ id: 'formWedding.invalidEmail' })
+          errors.email = intl({ id: 'formBenefits.invalidEmail' })
         }
 
         return errors
@@ -132,19 +130,19 @@ function FormWedding({ hideOnSuccess, onSuccess }) {
           <RowInputs>
             <Input
               required
-              iconProps={{ iconName: 'Heart' }}
-              label={intl({ id: 'formWedding.couplesName' })}
-              name="couplesName"
-              value={values.couplesName}
+              iconProps={{ iconName: 'Contact' }}
+              label={intl({ id: 'formBenefits.name' })}
+              name="name"
+              value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
             />
             <Input
               required
-              iconProps={{ iconName: 'Flag' }}
-              label={intl({ id: 'formWedding.country' })}
-              name="country"
-              value={values.country}
+              iconProps={{ iconName: 'CityNext2' }}
+              label={intl({ id: 'formBenefits.city' })}
+              name="city"
+              value={values.city}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -153,7 +151,7 @@ function FormWedding({ hideOnSuccess, onSuccess }) {
             <Input
               required
               iconProps={{ iconName: 'Phone' }}
-              label={intl({ id: 'formWedding.phoneNumber' })}
+              label={intl({ id: 'formBenefits.phoneNumber' })}
               name="phoneNumber"
               value={values.phoneNumber}
               onChange={handleChange}
@@ -162,7 +160,7 @@ function FormWedding({ hideOnSuccess, onSuccess }) {
             <Input
               required
               iconProps={{ iconName: 'Mail' }}
-              label={intl({ id: 'formWedding.email' })}
+              label={intl({ id: 'formBenefits.email' })}
               name="email"
               value={values.email}
               onChange={handleChange}
@@ -173,47 +171,25 @@ function FormWedding({ hideOnSuccess, onSuccess }) {
           <RowInputs>
             <DatePicker
               isRequired
-              label={intl({ id: 'formWedding.firstDate' })}
-              value={values.firstDate}
-              onChange={(date) => setFieldValue('firstDate', date)}
+              label={intl({ id: 'formBenefits.checkIn' })}
+              value={values.checkIn}
+              onChange={(date) => setFieldValue('checkIn', date)}
             />
             <DatePicker
-              label={intl({ id: 'formWedding.secondDate' })}
-              value={values.secondDate}
-              onChange={(date) => setFieldValue('secondDate', date)}
-              description={intl({ id: 'formWedding.descriptionSecondDate' })}
-            />
-          </RowInputs>
-          <RowInputs>
-            <Input
-              required
-              label={intl({ id: 'formWedding.guests' })}
-              type="number"
-              min={1}
-              name="guests"
-              value={values.guests}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              iconProps={{ iconName: 'Family' }}
-            />
-            <Input
-              label={intl({ id: 'formWedding.typeOfCeremony' })}
-              iconProps={{ iconName: 'PageLink' }}
-              name="typeOfCeremony"
-              value={values.typeOfCeremony}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder={intl({ id: 'formWedding.descriptionTypeOfCeremony' })}
+              isRequired
+              label={intl({ id: 'formBenefits.checkOut' })}
+              value={values.checkOut}
+              onChange={(date) => setFieldValue('checkOut', date)}
             />
           </RowInputs>
           <Button disabled={isSubmitting} type="submit">
-            {intl({ id: 'formWedding.button' })}
+            {intl({ id: 'formBenefits.button' })}
           </Button>
-          <TermMessage>{intl({ id: 'formWedding.terms' })}</TermMessage>
+          <TermMessage>{intl({ id: 'formBenefits.terms' })}</TermMessage>
         </form>
       )}
     </Formik>
   )
 }
 
-export default FormWedding
+export default FormBenefits
