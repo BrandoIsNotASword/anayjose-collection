@@ -1,12 +1,23 @@
 {
   "title": "Friends & Family",
   "description": "Ahora puedes formar parte de nuestra familia Ana y José Collection",
-  "h1": "TO ACQUIRE THESE INCREDIBLE BENEFITS YOU JUST HAVE TO APPLY",
+  "hero": {
+    "title": "BE PART OF THE ANA AND JOSE FAMILY",
+    "button": "Apply for membership"
+  },
+  "h1": "NOW YOU CAN BE PART OF OUR FAMILY ANA AND JOSÉ COLLECTION",
+  "presentation": {
+    "part1": "Love and hard work have been the pillars of Ana and Jose Collection for over 38 years, which has positioned us as pioneers of hospitality in Tulum. We have grown hand in hand with this wonderful city and its people, managing to form a great family with guests who visit us from all over the world.",
+    "part2": "Increasingly concerned with creating authentic and unforgettable experiences for each member of our family, we have created the [Ana y José Family Member] program with which you will obtain exclusive benefits that will make your vacation a magical moment that you can share with your loved ones.",
+    "part3": "Below we share with you the incredible experiences you will have access to being part of our family:",
+    "cost": "MEMBERSHIP FEE"
+  },
   "successMessage": {
     "main": "Thanks for your request!",
     "sub": "We'll get in touch as soon as posible."
   },
   "formBenefits": {
+    "title": "TO ACQUIRE THESE INCREDIBLE BENEFITS YOU JUST HAVE TO APPLY",
     "required": "Required",
     "invalidEmail": "Invalid email address",
     "name": "Name",

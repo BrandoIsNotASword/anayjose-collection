@@ -57,22 +57,12 @@ function FormBenefits({ hideOnSuccess, onSuccess }) {
   const [success, setSuccess] = useState(false)
 
   const onSubmit = async (values, { setSubmitting }) => {
-    const checkIn = values.checkIn.toLocaleDateString().split('/')
-    const checkOut =
-      values.checkOut !== '' ? values.checkOut.toLocaleDateString().split('/') : ['', '', '']
-
     const res = await addToMailchimp(values.email, {
-      COUPLESNAM: values.name,
-      COUNTRY: values.city,
+      NAME: values.name,
+      CITY: values.city,
       PHONENUMBE: values.phoneNumber,
-      GUESTS: values.guests,
-      TYPECEREMO: values.typeOfCeremony,
-      'FIRSTDATE[day]': checkIn[0],
-      'FIRSTDATE[month]': checkIn[1],
-      'FIRSTDATE[year]': checkIn[2],
-      'SECONDDATE[day]': checkOut[0],
-      'SECONDDATE[month]': checkOut[1],
-      'SECONDDATE[year]': checkOut[2],
+      CHECKIN: values.checkIn.toLocaleDateString(),
+      CHECKOUT: values.checkOut.toLocaleDateString(),
     })
 
     if (res.result === 'success') {
@@ -149,7 +139,6 @@ function FormBenefits({ hideOnSuccess, onSuccess }) {
           </RowInputs>
           <RowInputs>
             <Input
-              required
               iconProps={{ iconName: 'Phone' }}
               label={intl({ id: 'formBenefits.phoneNumber' })}
               name="phoneNumber"

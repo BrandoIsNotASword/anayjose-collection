@@ -46,7 +46,7 @@ const P = styled.p`
 const Benefits = styled.div`
   box-sizing: border-box;
   user-select: none;
-  display: grid;
+  display: inline-grid;
   grid-gap: 15px;
   grid-template-columns: auto;
 
@@ -56,6 +56,7 @@ const Benefits = styled.div`
 
   @media (min-width: ${MIN_WIDTH_MD}) {
     padding: 0 50px;
+    margin-top: 25px;
     grid-template-columns: auto auto auto;
   }
 `
@@ -132,26 +133,11 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title={intl({ id: 'title' })} description={intl({ id: 'description' })} />
-      <H1 style={{ color: '#3a5544' }}>
-        AHORA PUEDES FORMAR PARTE DE NUESTRA FAMILIA ANA Y JOSÉ COLLECTION
-      </H1>
+      <H1 style={{ color: '#3a5544' }}>{intl({ id: 'h1' })}</H1>
       <SectionPresentation>
-        <P>
-          Amor y trabajo duro han sido los pilares de Ana y José Collection por más de 38 años, lo
-          que ha logrado posicionarnos como pioneros de la hospitalidad en Tulum. Hemos crecido de
-          la mano de esta maravillosa ciudad y su gente, logrando conformar una gran familia con
-          huéspedes que nos visitan de todas partes del mundo.
-        </P>
-        <P>
-          Preocupados cada vez más en crear experiencias auténticas e inolvidables a cada miembro de
-          nuestra familia, hemos creado el programa "Ana y José Family Member" con el cuál obtendrás
-          beneficios exclusivos que harán de tus vacaciones un momento mágico que podrás compartir
-          con tus seres queridos.
-        </P>
-        <P>
-          A continuación te compartimos las increíbles experiencias a las que tendrás acceso al
-          formar parte de nuestra familia:
-        </P>
+        <P>{intl({ id: 'presentation.part1' })}</P>
+        <P>{intl({ id: 'presentation.part2' })}</P>
+        <P>{intl({ id: 'presentation.part3' })}</P>
         <Benefits>
           <Benefit src={benefit1} />
           <Benefit src={benefit2} />
@@ -161,13 +147,13 @@ function IndexPage() {
           <Benefit src={benefit6} />
         </Benefits>
         <PriceTag>
-          <span>COSTO DE LA MEMBRESÍA</span>
+          <span>{intl({ id: 'presentation.cost' })}</span>
           <br />
           $1900 MXN
         </PriceTag>
       </SectionPresentation>
       <Gallery />
-      <H1 id="form">{intl({ id: 'h1' })}</H1>
+      <H1 id="form">{intl({ id: 'formBenefits.title' })}</H1>
       <SectionForm>
         <FormBenefits hideOnSuccess />
       </SectionForm>

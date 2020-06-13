@@ -1,4 +1,5 @@
 import React from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import styled, { createGlobalStyle } from 'styled-components'
 import { initializeIcons } from '@uifabric/icons'
 
@@ -155,7 +156,9 @@ const FooterColumn = styled.div`
   }
 `
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
+  const intl = useIntl().formatMessage
+
   return (
     <MainWrapper>
       <GlobalStyle />
@@ -163,8 +166,8 @@ const Layout = ({ children }) => {
       <Hero>
         <HeroPromoMobile src={promoLogoMobile} />
         <HeroPromo src={promoLogo} />
-        <HeroTitle>SÉ PARTE DE LA FAMILIA ANA Y JOSÉ</HeroTitle>
-        <HeroButton href="#form">Solicitar membresía</HeroButton>
+        <HeroTitle>{intl({ id: 'hero.title' })}</HeroTitle>
+        <HeroButton href="#form">{intl({ id: 'hero.button' })}</HeroButton>
       </Hero>
       <Wrapper>
         <Main>{children}</Main>
