@@ -159,13 +159,11 @@ function FormBenefits({ hideOnSuccess, onSuccess }) {
           </RowInputs>
           <RowInputs>
             <DatePicker
-              isRequired
               label={intl({ id: 'formBenefits.checkIn' })}
               value={values.checkIn}
               onChange={(date) => setFieldValue('checkIn', date)}
             />
             <DatePicker
-              isRequired
               label={intl({ id: 'formBenefits.checkOut' })}
               value={values.checkOut}
               onChange={(date) => setFieldValue('checkOut', date)}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import styled, { createGlobalStyle } from 'styled-components'
 import { initializeIcons } from '@uifabric/icons'
@@ -156,8 +156,31 @@ const FooterColumn = styled.div`
   }
 `
 
+const FloatButton = styled.a`
+  height: 40px;
+  width: 100%;
+  background-color: #3a5544;
+  border-color: #3a5544;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  display: ${(props) => (props.disabled ? 'none' : 'flex')};
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    display: none;
+  }
+`
+
 function Layout({ children }) {
   const intl = useIntl().formatMessage
+  const [clicked, setClicked] = useState(false)
 
   return (
     <MainWrapper>
@@ -167,7 +190,9 @@ function Layout({ children }) {
         <HeroPromoMobile src={promoLogoMobile} />
         <HeroPromo src={promoLogo} />
         <HeroTitle>{intl({ id: 'hero.title' })}</HeroTitle>
-        <HeroButton href="#form">{intl({ id: 'hero.button' })}</HeroButton>
+        <HeroButton href="#form" onClick={() => setClicked(true)}>
+          {intl({ id: 'hero.button' })}
+        </HeroButton>
       </Hero>
       <Wrapper>
         <Main>{children}</Main>
@@ -187,6 +212,9 @@ function Layout({ children }) {
           </a>
         </FooterColumn>
       </Footer>
+      <FloatButton disabled={clicked} onClick={() => setClicked(true)} href="#form">
+        {intl({ id: 'hero.button' })}
+      </FloatButton>
     </MainWrapper>
   )
 }

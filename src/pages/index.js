@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import styled from 'styled-components'
 
@@ -100,35 +100,13 @@ const SectionForm = styled.section`
   margin-top: 20px;
   border-top: 1px solid #dbc4ab;
   margin: 0 auto;
-`
-
-const FloatButton = styled.a`
-  height: 40px;
-  width: 100%;
-  background-color: #3a5544;
-  border-color: #3a5544;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  display: ${(props) => (props.disabled ? 'none' : 'flex')};
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-
-  @media (min-width: ${MIN_WIDTH_MD}) {
-    display: none;
-  }
+  max-width: 720px;
 `
 
 const SectionPresentation = styled.section``
 
 function IndexPage() {
   const intl = useIntl().formatMessage
-  const [clicked, setClicked] = useState(false)
 
   return (
     <Layout>
@@ -157,9 +135,6 @@ function IndexPage() {
       <SectionForm>
         <FormBenefits hideOnSuccess />
       </SectionForm>
-      <FloatButton disabled={clicked} onClick={() => setClicked(true)} href="#form">
-        Solicitar membresía
-      </FloatButton>
     </Layout>
   )
 }
