@@ -8,9 +8,7 @@ import Button from './button'
 
 import 'normalize.css'
 
-import bg from '../images/banner-background-desk.jpg'
-import promoLogo from '../images/friends-and-family.png'
-import promoLogoMobile from '../images/friends-and-family-mobile.png'
+import bg from '../images/main-banner.jpg'
 
 initializeIcons()
 
@@ -30,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   p,
   span {
     max-height: 999999px;
+    margin: 0;
   }
 
   .ms-DatePicker-day-button span {
@@ -66,7 +65,6 @@ const Main = styled.main`
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
-  padding: 25px;
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
   max-width: 1280px;
@@ -78,7 +76,6 @@ const Hero = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 150px);
-  padding-top: 75px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -92,44 +89,32 @@ const Hero = styled.div`
   }
 `
 
-const HeroPromoMobile = styled.img`
-  max-width: 250px;
-  width: 70%;
-  margin: 0 auto;
-  display: block;
-
-  @media (min-width: ${MIN_WIDTH_MD}) {
-    display: none;
-  }
-`
-
-const HeroPromo = styled.img`
-  max-width: 700px;
-  width: 85%;
-  margin: 0 auto;
-  display: none;
-
-  @media (min-width: ${MIN_WIDTH_MD}) {
-    display: block;
-  }
-`
-
 const HeroButton = styled(Button)`
   max-width: 300px;
   margin: 0 auto;
   display: block;
 `
 
-const HeroTitle = styled.p`
+const HeroTitle = styled.h1`
   color: white;
   text-align: center;
-  font-size: 1.35rem;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
   margin-top: 0px;
 
   @media (min-width: ${MIN_WIDTH}) {
     font-size: 1.75rem;
   }
+`
+
+const HeroSubtitle = styled.h2`
+  color: white;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 32px;
 `
 
 const Footer = styled.footer`
@@ -187,9 +172,8 @@ function Layout({ children }) {
       <GlobalStyle />
       <Header />
       <Hero>
-        <HeroPromoMobile src={promoLogoMobile} />
-        <HeroPromo src={promoLogo} />
         <HeroTitle>{intl({ id: 'hero.title' })}</HeroTitle>
+        <HeroSubtitle>{intl({ id: 'hero.subtitle' })}</HeroSubtitle>
         <HeroButton href="#form" onClick={() => setClicked(true)}>
           {intl({ id: 'hero.button' })}
         </HeroButton>
@@ -212,9 +196,6 @@ function Layout({ children }) {
           </a>
         </FooterColumn>
       </Footer>
-      <FloatButton disabled={clicked} onClick={() => setClicked(true)} href="#form">
-        {intl({ id: 'hero.button' })}
-      </FloatButton>
     </MainWrapper>
   )
 }

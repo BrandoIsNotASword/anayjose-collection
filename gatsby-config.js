@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/friends-and-family`,
+  pathPrefix: `/collection`,
   siteMetadata: {
     title: `Ana y José Tulum`,
     description: `Ahora puedes formar parte de nuestra familia Ana y José Collection.`,
@@ -28,12 +28,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/anayjose-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mailchimp`,
-      options: {
-        endpoint: `https://anayjose.us19.list-manage.com/subscribe/post?u=913dbc71926ff10619b39e45b&amp;id=7190b64ef8`,
       },
     },
     {

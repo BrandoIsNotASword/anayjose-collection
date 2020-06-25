@@ -9,9 +9,9 @@ const Wrapper = styled.div`
   .ms-Button--primary {
     height: 40px;
     width: 100%;
-    border-radius: 100px;
-    background-color: #3a5544;
-    border-color: #3a5544;
+    border-radius: ${(props) => props.borderRadius};
+    background-color: ${(props) => props.backgroundColor};
+    border-color: transparent;
   }
 
   .ms-Button.is-disabled {
@@ -20,12 +20,17 @@ const Wrapper = styled.div`
   }
 `
 
-function StyledButton(props) {
+function StyledButton({ children, backgroundColor, borderRadius, ...restProps }) {
   return (
-    <Wrapper>
-      <PrimaryButton {...props}>{props.children}</PrimaryButton>
+    <Wrapper backgroundColor={backgroundColor} borderRadius={borderRadius}>
+      <PrimaryButton {...restProps}>{children}</PrimaryButton>
     </Wrapper>
   )
+}
+
+StyledButton.defaultProps = {
+  backgroundColor: '#3a5544',
+  borderRadius: '100px',
 }
 
 export default StyledButton

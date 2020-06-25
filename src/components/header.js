@@ -19,7 +19,6 @@ const Wrapper = styled.header`
   align-items: center;
   padding: 15px;
   padding-bottom: 0;
-  position: absolute;
   width: 100%;
   flex-direction: column;
 
@@ -36,7 +35,11 @@ const LinkLogo = styled.a`
 const LangOptions = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px;
+  padding-bottom: 15px;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 1px solid lightgray;
 `
 
 const LinkLang = styled.a`
@@ -49,8 +52,24 @@ const LinkLang = styled.a`
   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 
   &:hover {
-    color: #dbc4ab;
+    color: #3a5544;
   }
+`
+
+const Nav = styled.nav`
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+`
+
+const NavLink = styled.a`
+  box-sizing: border-box;
+  color: gray;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: 15px 10px;
 `
 
 function Header() {
@@ -65,7 +84,7 @@ function Header() {
             languages.map((language) => (
               <LinkLang
                 key={language}
-                color={currentLocale === language ? '#dbc4ab' : '#ffffff'}
+                color={currentLocale === language ? '#3a5544' : 'whitesmoke'}
                 onClick={() => changeLocale(language)}
               >
                 {LANGS_NAME[language]}
@@ -74,6 +93,14 @@ function Header() {
           }
         </IntlContextConsumer>
       </LangOptions>
+      <Nav>
+        <NavLink href="#why">WHY STAY WITH US?</NavLink>
+        <NavLink href="#how">HOW IT WORKS?</NavLink>
+        <NavLink href="#plans">MEMBERSHIP PLANS</NavLink>
+        <NavLink href="#collection">OUR COLLECTION</NavLink>
+        <NavLink href="#destinations">TOP DESTINATIONS</NavLink>
+        <NavLink href="#benefits">MEMBERSHIP BENEFITS</NavLink>
+      </Nav>
     </Wrapper>
   )
 }
