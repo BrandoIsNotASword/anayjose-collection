@@ -71,6 +71,48 @@
       }
     }
   },
-  "collection": {},
-  "benefits": {}
+  "collection": {
+    "title": "OUR COLLECTION",
+    "description": "Don’t just book a vacation. Become member of a luxurious boutique lifestyle.",
+    "features": {
+      "residences": "THE RESIDENCES LUXURY VACATION HOMES",
+      "stays": "WEEKLY STAYS",
+      "bonus": {
+        "title": "BONUS WEEK",
+        "description": "Limited offer"
+      },
+      "hotels": {
+        "title": "HOTELS & RESORTS (PRICE GUARANTEED)",
+        "description": "More than 400,000 hotels all over the world"
+      },
+      "tours": "WORLDWIDE TOURS & TRAVELS",
+      "cruises": "EXCLUSIVE CRUISES"
+    }
+  },
+  "benefits": {
+    "title": "MEMBERSHIP BENEFITS",
+    "description": "Your membership gives you a full private club experience.",
+    "features": {
+      "marketplace": {
+        "title": "MARKETPLACE: ",
+        "description": "A private platform for members to rent and bid on vacations weeks. If you are a timeshare owner, have members bid on your week and allow the best offer to win.",
+        "list": {
+          "1": "Search hundreds of weeks worldwide.",
+          "2": "Rent right away or make an offer.",
+          "3": "Negotiate to pay the price you want.",
+          "4": "Get a week below market value.",
+          "5": "Place your week for rent."
+        }
+      },
+      "car": {
+        "title": "RENTAL CARS: ",
+        "description": "You can rent a car for a fraction of the retail price with your membership. Book the same day or in advance with pickup and drop-off locations available throughout the United States, Mexico, Canada, Europe, and anywhere you are traveling. Renting a car has never been so affordable and easy."
+      },
+      "flights": {
+        "title": "FLIGHTS: ",
+        "description": "Your membership offers you the ability to book flights in both money and reward credits. Booking flights through your membership helps you earn double or triple rewards each time you fly. You earn reward credits with every flight you book. Additionally, you may receive frequent flyer miles and earn rewards back from your credit card."
+      }
+    },
+    "button": "Get a membership"
+  }
 }

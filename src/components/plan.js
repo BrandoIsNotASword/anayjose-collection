@@ -1,4 +1,5 @@
 import React from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import styled from 'styled-components'
 
 import Button from '../components/button'
@@ -55,6 +56,8 @@ const P = styled.p`
 `
 
 function Plan({ backgroundColor, image, name, content, onClick }) {
+  const intl = useIntl().formatMessage
+
   const renderConent = (content) => {
     return content.split(' / ').map((text) => <P>{text}</P>)
   }
@@ -66,7 +69,7 @@ function Plan({ backgroundColor, image, name, content, onClick }) {
       </Img>
       <Content>{renderConent(content)}</Content>
       <Button backgroundColor="rgba(0, 0, 0, 0.2)" borderRadius="0px">
-        Book with this plan
+        {intl({ id: 'plans.button' })}
       </Button>
     </Wrapper>
   )

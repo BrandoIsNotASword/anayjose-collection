@@ -19,15 +19,15 @@
     "features": {
       "explore": {
         "title": "ALEGRÍA Y EXPLORACIÓN",
-        "description": "Pague una cuota única para hacerse miembro y empiece a explorar nuestra colección global de opciones de vacaciones de lujo".,
+        "description": "Pague una cuota única para hacerse miembro y empiece a explorar nuestra colección global de opciones de vacaciones de lujo."
       },
       "plan": {
         "title": "PLAN Y VACACIONES",
-        "description": "Nuestros diseñadores de viajes le ayudarán a elegir y planificar el primer viaje perfecto. Paga sólo por las noches que uses".,
+        "description": "Nuestros diseñadores de viajes le ayudarán a elegir y planificar el primer viaje perfecto. Paga sólo por las noches que uses."
       },
       "enjoy": {
         "title": "DISFRUTAR",
-        "description": "Disfruta con tus seres queridos y añade beneficiarios".,
+        "description": "Disfruta con tus seres queridos y añade beneficiarios."
       }
     }
   },
@@ -50,12 +50,12 @@
       "luxury": {
         "title": "LUXURY PLAN",
         "content": "PROGRAMA DE NOCHES ILIMITADAS / CASA DE AGUA / *3 NOCHES DE ESTANCIA MÍNIMA"
-      },
-      "button": "Reservar con este plan"
-    }
+      }
+    },
+    "button": "Reservar con este plan"
   },
   "why": {
-    "title": "WHY STAY WITH US?",
+    "title": "¿POR QUÉ HOSPEDARTE?",
     "features": {
       "results": {
         "title": "RESULTADOS GARANTIZADOS",
@@ -67,8 +67,52 @@
       },
       "luxury": {
         "title": "UNA MARCA DE LUJO",
-        "description": "Nos enfocamos exclusivamente en casas vacacionales de lujo, elevándolas para que cumplan con los estándares de nuestra marca".
+        "description": "Nos enfocamos exclusivamente en casas vacacionales de lujo, elevándolas para que cumplan con los estándares de nuestra marca."
       }
     }
+  },
+  "collection": {
+    "title": "NUESTRA COLECCIÓN",
+    "description": "No reserven sólo unas vacaciones. Conviértete en miembro de un lujoso estilo de vida de boutique.",
+    "features": {
+      "residences": "LAS RESIDENCIAS DE VACACIONES DE LUJO",
+      "stays": "ESTANCIAS SEMANALES",
+      "bonus": {
+        "title": "BONUS WEEK",
+        "description": "Oferta limitada"
+      },
+      "hotels": {
+        "title": "HOTELES Y RESORTS (PRECIO GARANTIZADO)",
+        "description": "Más de 400,000 hoteles en todo el mundo"
+      },
+      "tours": "TOURA Y VIAJES POR TODO EL MUNDO",
+      "cruises": "CRUCEROS EXCLUSIVOS"
+    }
+  },
+  "benefits": {
+    "title": "BENEFICIOS PARA LOS MIEMBROS",
+    "description": "Tu membresía te da una experiencia completa de club privado.",
+    "features": {
+      "marketplace": {
+        "title": "MARKETPLACE: ",
+        "description": "Una plataforma privada para que los miembros alquilen y pujen por semanas de vacaciones. Si eres propietario de un tiempo compartido, haz que los miembros hagan una oferta por tu semana y permite que gane la mejor oferta.",
+        "list": {
+          "1": "Buscar cientos de semanas en todo el mundo",
+          "2": "Alquile inmediatamente o haga una oferta",
+          "3": "Negocie para pagar el precio que quiera.",
+          "4": "Obtener una semana por debajo del valor de mercado",
+          "5": "Ponga su semana en alquiler."
+        }
+      },
+      "car": {
+        "title": "COCHES PARA RENTAR: ",
+        "description": "Puedes alquilar un coche por una fracción del precio de venta al público con tu membresía. Reserve el mismo día o con anticipación con lugares de recogida y entrega disponibles en todo Estados Unidos, México, Canadá, Europa, y en cualquier lugar donde esté viajando. Alquilar un coche nunca ha sido tan asequible y fácil."
+      },
+      "flights": {
+        "title": "VUELOS: ",
+        "description": "Su membresía le ofrece la posibilidad de reservar vuelos tanto en dinero como en créditos de recompensa. La reserva de vuelos a través de su membresía le ayuda a ganar el doble o el triple de recompensas cada vez que vuele. Usted gana créditos de recompensa con cada vuelo que reserva. Además, puede recibir millas de viajero frecuente y ganar recompensas de su tarjeta de crédito."
+      }
+    },
+    "button": "Obtener una membresía"
   }
 }

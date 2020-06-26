@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { useIntl } from 'gatsby-plugin-intl'
 
 import { IntlContextConsumer, changeLocale } from 'gatsby-plugin-intl'
 
@@ -78,6 +79,8 @@ const NavLink = styled.a`
 `
 
 function Header() {
+  const intl = useIntl().formatMessage
+
   return (
     <Wrapper>
       <LinkLogo href="https://anayjose.com/">
@@ -99,11 +102,11 @@ function Header() {
         </IntlContextConsumer>
       </LangOptions>
       <Nav>
-        <NavLink href="#how">HOW IT WORKS?</NavLink>
-        <NavLink href="#plans">MEMBERSHIP PLANS</NavLink>
-        <NavLink href="#why">WHY STAY WITH US?</NavLink>
-        <NavLink href="#collection">OUR COLLECTION</NavLink>
-        <NavLink href="#benefits">MEMBERSHIP BENEFITS</NavLink>
+        <NavLink href="#how">{intl({ id: 'menu.how' })}</NavLink>
+        <NavLink href="#plans">{intl({ id: 'menu.plans' })}</NavLink>
+        <NavLink href="#why">{intl({ id: 'menu.why' })}</NavLink>
+        <NavLink href="#collection">{intl({ id: 'menu.collection' })}</NavLink>
+        <NavLink href="#benefits">{intl({ id: 'menu.benefits' })}</NavLink>
       </Nav>
     </Wrapper>
   )

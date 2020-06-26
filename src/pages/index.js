@@ -139,117 +139,122 @@ function IndexPage() {
       <SEO title={intl({ id: 'title' })} description={intl({ id: 'description' })} />
       <Section id="how" backgroundColor="#f2f2f2">
         <Title>
-          HOW IT WORKS? <span>Your membership gives you a full private club experience.</span>
+          {intl({ id: 'how.title' })} <span>{intl({ id: 'how.description' })}</span>
         </Title>
         <Separator />
         <Grid>
           <Feature
             src={explore}
-            title="JOY & EXPLORE"
-            description="Pay a One-Time fee to become a member and begin exploring our global collection of luxury vacation options."
+            title={intl({ id: 'how.features.explore.title' })}
+            description={intl({ id: 'how.features.explore.description' })}
           />
           <Feature
             src={plan}
-            title="PLAN & VACATION"
-            description="Our travel designers will help you choose and plan the perfect first trip. Pay only for the nights you use."
+            title={intl({ id: 'how.features.plan.title' })}
+            description={intl({ id: 'how.features.plan.description' })}
           />
           <Feature
             src={enjoy}
-            title="ENJOY"
-            description="Enjoy with your love ones and add beneficiaries."
+            title={intl({ id: 'how.features.enjoy.title' })}
+            description={intl({ id: 'how.features.enjoy.description' })}
           />
         </Grid>
       </Section>
       <Section id="plans">
         <Title>
-          MEMBERSHIP PLANS
-          <span>
-            You’re finally here, the best hotel in Tulum. You made to our charming spot, the place
-            of your dreams.
-          </span>
+          {intl({ id: 'plans.title' })}
+          <span>{intl({ id: 'plans.description' })}</span>
         </Title>
         <Separator />
         <Plans>
           <Plan
             backgroundColor="#bfa487"
             image={planGarden}
-            name="GARDEN PLAN"
-            content="100 NIGHTS PROGRAM / GARDEN VIEW SUITE / *3 NIGHTS STAY MINIMUM"
+            name={intl({ id: 'plans.features.garden.title' })}
+            content={intl({ id: 'plans.features.garden.content' })}
             onClick={() => setIsOpen(true)}
           />
           <Plan
             backgroundColor="#bc8350"
             image={planResidence}
-            name="RESIDENCE PLAN"
-            content="200 NIGHTS PROGRAM / 2 BEDROOM SUITE / *3 NIGHTS STAY MINIMUM"
+            name={intl({ id: 'plans.features.residence.title' })}
+            content={intl({ id: 'plans.features.residence.content' })}
             onClick={() => setIsOpen(true)}
           />
           <Plan
             backgroundColor="#814e20"
             image={planCoba}
-            name="COBA PLAN"
-            content="200 NIGHTS PROGRAM / VILLA COBA / *3 NIGHTS STAY MINIMUM"
+            name={intl({ id: 'plans.features.coba.title' })}
+            content={intl({ id: 'plans.features.coba.content' })}
             onClick={() => setIsOpen(true)}
           />
           <Plan
             backgroundColor="#385745"
             image={planLuxury}
-            name="LUXURY PLAN"
-            content="UNLIMITED NIGHTS PROGRAM / CASA DE AGUA / *3 NIGHTS STAY MINIMUM"
+            name={intl({ id: 'plans.features.luxury.title' })}
+            content={intl({ id: 'plans.features.luxury.content' })}
             onClick={() => setIsOpen(true)}
           />
         </Plans>
       </Section>
       <Section id="why" backgroundColor="#f2f2f2">
-        <Title>WHY STAY WITH US?</Title>
+        <Title>{intl({ id: 'why.title' })}</Title>
         <Separator />
         <Grid>
           <Feature
             src={results}
-            title="GUARANTEED RESULTS"
-            description="Our unique structure combines the highest quality guests with guaranteed revenue for our property partners."
+            title={intl({ id: 'why.features.results.title' })}
+            description={intl({ id: 'why.features.results.description' })}
           />
           <Feature
             src={work}
-            title="WE DO ALL THE WORK"
-            description="From marketing and booking to customer service, housekeeping, and maintenance never worry abour your home again."
+            title={intl({ id: 'why.features.work.title' })}
+            description={intl({ id: 'why.features.work.description' })}
           />
           <Feature
             src={luxury}
-            title="A LUXURY BRAND"
-            description="We focus exclusively on luxury vacation homes, elevating them to meet our comprehensive brand standards."
+            title={intl({ id: 'why.features.luxury.title' })}
+            description={intl({ id: 'why.features.luxury.description' })}
           />
         </Grid>
       </Section>
       <Section id="collection">
         <Title>
-          OUR COLLECTION{' '}
-          <span>Don’t just book a vacation. Become member of a luxurious boutique lifestyle.</span>
+          {intl({ id: 'collection.title' })} <span>{intl({ id: 'collection.description' })}</span>
         </Title>
         <Separator />
         <Collections>
           <CollectionItem
             background={collectionResidences}
-            content="THE RESIDENCES LUXURY VACATION HOMES"
+            content={intl({ id: 'collection.features.residences' })}
           />
-          <CollectionItem background={collectionWeekly} content="WEEKLY STAYS" />
+          <CollectionItem
+            background={collectionWeekly}
+            content={intl({ id: 'collection.features.stays' })}
+          />
           <CollectionItem
             background={collectionBonus}
-            content="BONUS WEEK"
-            description="Limited offer"
+            content={intl({ id: 'collection.features.bonus.title' })}
+            description={intl({ id: 'collection.features.bonus.description' })}
           />
           <CollectionItem
             background={collectionHotels}
-            content="HOTELS & RESORTS (PRICE GUARANTEED)"
-            description="More than 400,000 hotels all over the world"
+            content={intl({ id: 'collection.features.hotels.title' })}
+            description={intl({ id: 'collection.features.hotels.description' })}
           />
-          <CollectionItem background={collectionTours} content="WORLDWIDE TOURS & TRAVELS" />
-          <CollectionItem background={collectionCruises} content="EXCLUSIVE CRUISES" />
+          <CollectionItem
+            background={collectionTours}
+            content={intl({ id: 'collection.features.tours' })}
+          />
+          <CollectionItem
+            background={collectionCruises}
+            content={intl({ id: 'collection.features.cruises' })}
+          />
         </Collections>
       </Section>
       <Section id="benefits" backgroundColor="#f2f2f2">
         <Title>
-          HOW IT WORKS? <span>Your membership gives you a full private club experience.</span>
+          {intl({ id: 'benefits.title' })} <span>{intl({ id: 'benefits.description' })}</span>
         </Title>
         <Separator />
         <Benefit
@@ -257,9 +262,8 @@ function IndexPage() {
           content={
             <div>
               <P>
-                <b>MARKETPLACE: </b>A private platform for members to rent and bid on vacations
-                weeks. If you are a timeshare owner, have members bid on your week and allow the
-                best offer to win.
+                <b>{intl({ id: 'benefits.features.marketplace.title' })} </b>
+                {intl({ id: 'benefits.features.marketplace.description' })}
               </P>
               <Ul>
                 <Li>
@@ -268,7 +272,7 @@ function IndexPage() {
                     color="#3a5544"
                     style={{ flexShrink: 0, marginRight: '5px' }}
                   />
-                  <P>Search hundreds of weeks worldwide.</P>
+                  <P>{intl({ id: 'benefits.features.marketplace.list.1' })}</P>
                 </Li>
                 <Li>
                   <AiFillCheckCircle
@@ -276,7 +280,7 @@ function IndexPage() {
                     color="#3a5544"
                     style={{ flexShrink: 0, marginRight: '5px' }}
                   />
-                  <P>Rent right away or make an offer.</P>
+                  <P>{intl({ id: 'benefits.features.marketplace.list.2' })}</P>
                 </Li>
                 <Li>
                   <AiFillCheckCircle
@@ -284,7 +288,7 @@ function IndexPage() {
                     color="#3a5544"
                     style={{ flexShrink: 0, marginRight: '5px' }}
                   />
-                  <P>Negotiate to pay the price you want.</P>
+                  <P>{intl({ id: 'benefits.features.marketplace.list.3' })}</P>
                 </Li>
                 <Li>
                   <AiFillCheckCircle
@@ -292,7 +296,7 @@ function IndexPage() {
                     color="#3a5544"
                     style={{ flexShrink: 0, marginRight: '5px' }}
                   />
-                  <P>Get a week below market value.</P>
+                  <P>{intl({ id: 'benefits.features.marketplace.list.4' })}</P>
                 </Li>
                 <Li>
                   <AiFillCheckCircle
@@ -300,7 +304,7 @@ function IndexPage() {
                     color="#3a5544"
                     style={{ flexShrink: 0, marginRight: '5px' }}
                   />
-                  <P>Place your week for rent.</P>
+                  <P>{intl({ id: 'benefits.features.marketplace.list.5' })}</P>
                 </Li>
               </Ul>
             </div>
@@ -310,10 +314,8 @@ function IndexPage() {
           icon={car}
           content={
             <P>
-              <b>RENTAL CARS: </b> You can rent a car for a fraction of the retail price with your
-              membership. Book the same day or in advance with pickup and drop-off locations
-              available throughout the United States, Mexico, Canada, Europe, and anywhere you are
-              traveling. Renting a car has never been so affordable and easy.
+              <b>{intl({ id: 'benefits.features.car.title' })} </b>{' '}
+              {intl({ id: 'benefits.features.car.description' })}
             </P>
           }
         />
@@ -321,11 +323,8 @@ function IndexPage() {
           icon={flight}
           content={
             <P>
-              <b>FLIGHTS: </b> Your membership offers you the ability to book flights in both money
-              and reward credits. Booking flights through your membership helps you earn double or
-              triple rewards each time you fly. You earn reward credits with every flight you book.
-              Additionally, you may receive frequent flyer miles and earn rewards back from your
-              credit card.
+              <b>{intl({ id: 'benefits.features.flights.title' })} </b>{' '}
+              {intl({ id: 'benefits.features.flights.description' })}
             </P>
           }
         />
@@ -334,7 +333,7 @@ function IndexPage() {
           style={{ marginTop: '32px', maxWidth: '320px', display: 'inline-block' }}
           target="_blank"
         >
-          Get a membership
+          {intl({ id: 'benefits.button' })}
         </Button>
       </Section>
       <Booking isOpen={isOpen} onCloseModal={() => setIsOpen(false)} />
