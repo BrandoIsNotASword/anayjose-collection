@@ -1,35 +1,76 @@
 {
   "title": "Ana y José Collection",
   "description": "Ahora puedes formar parte de nuestra familia Ana y José Collection",
+  "menu": {
+    "how": "HOW IT WORKS?",
+    "plans": "MEMBERSHIP PLANS",
+    "why": "WHY STAY WITH US?",
+    "collection": "OUR COLLECTION",
+    "benefits": "MEMBERSHIP BENEFITS"
+  },
   "hero": {
     "title": "Your story continues here",
     "subtitle": "Get exclusive complementary benefits",
     "button": "View membership plans"
   },
-  "h1": "NOW YOU CAN BE PART OF OUR FAMILY ANA AND JOSÉ COLLECTION",
-  "presentation": {
-    "part1": "Love and hard work have been the pillars of Ana and Jose Collection for over 38 years, which has positioned us as pioneers of hospitality in Tulum. We have grown hand in hand with this wonderful city and its people, managing to form a great family with guests who visit us from all over the world.",
-    "part2": "Increasingly concerned with creating authentic and unforgettable experiences for each member of our family, we have created the [Ana y José Family Member] program with which you will obtain exclusive benefits that will make your vacation a magical moment that you can share with your loved ones.",
-    "part3": "Below we share with you the incredible experiences you will have access to being part of our family:",
-    "cost": "MEMBERSHIP FEE"
+  "how": {
+    "title": "HOW IT WORKS?",
+    "description": "Your membership gives you a full private club experience.",
+    "features": {
+      "explore": {
+        "title": "JOY & EXPLORE",
+        "description": "Pay a One-Time fee to become a member and begin exploring our global collection of luxury vacation options."
+      },
+      "plan": {
+        "title": "PLAN & VACATION",
+        "description": "Our travel designers will help you choose and plan the perfect first trip. Pay only for the nights you use."
+      },
+      "enjoy": {
+        "title": "ENJOY",
+        "description": "Enjoy with your love ones and add beneficiaries."
+      }
+    }
   },
-  "successMessage": {
-    "main": "Thanks for your request!",
-    "sub": "We'll get in touch as soon as posible."
+  "plans": {
+    "title": "MEMBERSHIP PLANS",
+    "description": "You’re finally here, the best hotel in Tulum. You made to our charming spot, the place of your dreams.",
+    "features": {
+      "garden": {
+        "title": "GARDEN PLAN",
+        "content": "100 NIGHTS PROGRAM / GARDEN VIEW SUITE / *3 NIGHTS STAY MINIMUM"
+      },
+      "residence": {
+        "title": "RESIDENCE PLAN",
+        "content": "200 NIGHTS PROGRAM / 2 BEDROOM SUITE / *3 NIGHTS STAY MINIMUM"
+      },
+      "coba": {
+        "title": "COBA PLAN",
+        "content": "200 NIGHTS PROGRAM / VILLA COBA / *3 NIGHTS STAY MINIMUM"
+      },
+      "luxury": {
+        "title": "LUXURY PLAN",
+        "content": "UNLIMITED NIGHTS PROGRAM / CASA DE AGUA / *3 NIGHTS STAY MINIMUM"
+      }
+    },
+    "button": "Book with this plan"
   },
-  "formBenefits": {
-    "title": "TO ACQUIRE THESE INCREDIBLE BENEFITS YOU JUST HAVE TO APPLY",
-    "required": "Required",
-    "invalidEmail": "Invalid email address",
-    "name": "Name",
-    "city": "City",
-    "phoneNumber": "Phone number",
-    "email": "Email",
-    "checkIn": "Check-In",
-    "checkOut": "Check-Out",
-    "button": "Send request",
-    "terms": "Limited promotion subject to availability. Not applicable with other promotions. Valid for one year. Booking window: June 1 to December 28, 2021. Travel window: June 1 to December 20, January 15 to March 25, April 12 to October 31, 2021, December 1 to December 15, 2021. 2 nights min. 4 pax max (2 bedrooms). Capacity limited to room type."
+  "why": {
+    "title": "WHY STAY WITH US?",
+    "features": {
+      "results": {
+        "title": "GUARANTEED RESULTS",
+        "description": "Our unique structure combines the highest quality guests with guaranteed revenue for our property partners."
+      },
+      "work": {
+        "title": "WE DO ALL THE WORK",
+        "description": "From marketing and booking to customer service, housekeeping, and maintenance never worry abour your home again."
+      },
+      "luxury": {
+        "title": "A LUXURY BRAND",
+        "description": "We focus exclusively on luxury vacation homes, elevating them to meet our comprehensive brand standards."
+      }
+    }
   },
-  "nextSlide": "Next",
-  "prevSlide": "Prev"
+  "collection": {},
+  "benefits": {}
 }

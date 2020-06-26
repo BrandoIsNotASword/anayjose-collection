@@ -1,35 +1,74 @@
 {
   "title": "Ana y José Collection",
   "description": "Now you can be part of our family Ana and Jose Collection",
+  "menu": {
+    "how": "¿CÓMO FUNCIONA?",
+    "plans": "PLAN PARA MIEMBROS",
+    "why": "¿POR QUÉ HOSPEDARTE?",
+    "collection": "NUESTRA COLECCIÓN",
+    "benefits": "BENEFICIOS PARA MIEMBROS"
+  },
   "hero": {
     "title": "La historia continúa aquí",
     "subtitle": "Obtén exclusivos beneficios complementarios",
     "button": "Ver planes para miembros"
   },
-  "h1": "AHORA PUEDES FORMAR PARTE DE NUESTRA FAMILIA ANA Y JOSÉ COLLECTION",
-  "presentation": {
-    "part1": "Amor y trabajo duro han sido los pilares de Ana y José Collection por más de 38 años, lo que ha logrado posicionarnos como pioneros de la hospitalidad en Tulum. Hemos crecido de la mano de esta maravillosa ciudad y su gente, logrando conformar una gran familia con huéspedes que nos visitan de todas partes del mundo.",
-    "part2": "Preocupados cada vez más en crear experiencias auténticas e inolvidables a cada miembro de nuestra familia, hemos creado el programa [Ana y José Family Member] con el cuál obtendrás beneficios exclusivos que harán de tus vacaciones un momento mágico que podrás compartir con tus seres queridos.",
-    "part3": "A continuación te compartimos las increíbles experiencias a las que tendrás acceso al formar parte de nuestra familia:",
-    "cost": "COSTO DE LA MEMBRESÍA"
+  "how": {
+    "title": "¿CÓMO FUNCIONA?",
+    "description": "Su membresía le da una experiencia completa de club privado",
+    "features": {
+      "explore": {
+        "title": "ALEGRÍA Y EXPLORACIÓN",
+        "description": "Pague una cuota única para hacerse miembro y empiece a explorar nuestra colección global de opciones de vacaciones de lujo".,
+      },
+      "plan": {
+        "title": "PLAN Y VACACIONES",
+        "description": "Nuestros diseñadores de viajes le ayudarán a elegir y planificar el primer viaje perfecto. Paga sólo por las noches que uses".,
+      },
+      "enjoy": {
+        "title": "DISFRUTAR",
+        "description": "Disfruta con tus seres queridos y añade beneficiarios".,
+      }
+    }
   },
-  "successMessage": {
-    "main": "¡Gracias por tu solicitud!",
-    "sub": "Nos pondremos en contigo lo antes posible."
+  "plans": {
+    "title": "PLANES DE MEMBRESÍA",
+    "description": "Por fin estás aquí, el mejor hotel de Tulum. Has hecho de nuestro encantador lugar, el lugar de tus sueños.",
+    "features": {
+      "garden": {
+        "title": "GARDEN PLAN",
+        "content": "PROGRAMA DE 100 NOCHES / SUITE CON VISTA AL JARDÍN / *3 NOCHES DE ESTANCIA MÍNIMA"
+      },
+      "residence": {
+        "title": "RESIDENCE PLAN",
+        "content": "PROGRAMA DE 200 NOCHES / SUITE DE 2 DORMITORIOS / *3 NOCHES DE ESTANCIA MÍNIMA"
+      },
+      "coba": {
+        "title": "COBA PLAN",
+        "content": "PROGRAMA DE 200 NOCHES / VILLA COBA / *3 NOCHES DE ESTANCIA MÍNIMA"
+      },
+      "luxury": {
+        "title": "LUXURY PLAN",
+        "content": "PROGRAMA DE NOCHES ILIMITADAS / CASA DE AGUA / *3 NOCHES DE ESTANCIA MÍNIMA"
+      },
+      "button": "Reservar con este plan"
+    }
   },
-  "formBenefits": {
-    "title": "PARA ADQUIRIR ESTOS INCREÍBLES BENEFICIOS SOLO DEBE SOLICITARLO",
-    "required": "Requerido",
-    "invalidEmail": "Correo inválido",
-    "name": "Nombre",
-    "city": "Ciudad",
-    "phoneNumber": "Celular",
-    "email": "Email",
-    "checkIn": "Fecha de llegada",
-    "checkOut": "Fecha de salida",
-    "button": "Enviar solicitud",
-    "terms": "Promoción limitada sujeta a disponibilidad. No aplica con otras promociones. Válido por un año. Booking window: 1 de Junio al 28 de Diciembre 2021. Travel window: 1 de Junio al 20 de Diciembre, 15 de Enero hasta 25 Marzo, 12 Abril al 31 de Octubre 2021, 1 de Diciembre al 15 de Diciembre 2021. 2 noches min. 4 pax max (2 hab). Capacidad limitada al tipo de habitación."
-  },
-  "nextSlide": "Siguiente",
-  "prevSlide": "Anterior"
+  "why": {
+    "title": "WHY STAY WITH US?",
+    "features": {
+      "results": {
+        "title": "RESULTADOS GARANTIZADOS",
+        "description": "Nuestra estructura única combina la más alta calidad de huéspedes con ingresos garantizados para nuestros socios de la propiedad."
+      },
+      "work": {
+        "title": "HACEMOS TODO EL TRABAJO",
+        "description": "Desde el marketing y las reservas hasta el servicio al cliente, el mantenimiento y la limpieza, nunca más se preocupe por su casa."
+      },
+      "luxury": {
+        "title": "UNA MARCA DE LUJO",
+        "description": "Nos enfocamos exclusivamente en casas vacacionales de lujo, elevándolas para que cumplan con los estándares de nuestra marca".
+      }
+    }
+  }
 }
