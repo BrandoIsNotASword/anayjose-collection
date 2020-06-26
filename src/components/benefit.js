@@ -1,9 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const MIN_WIDTH_MD = '1280px'
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    flex-direction: row;
+  }
 `
 
 const Icon = styled.img`
@@ -11,6 +18,7 @@ const Icon = styled.img`
   width: 80px;
   flex-shrink: 0;
   margin-bottom: 15px;
+  margin-right: 32px;
 `
 
 const Content = styled.div`

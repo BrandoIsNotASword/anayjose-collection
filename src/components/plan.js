@@ -5,6 +5,13 @@ import Button from '../components/button'
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.backgroundColor};
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.95;
+  }
 `
 
 const Img = styled.div`
@@ -22,15 +29,17 @@ const Name = styled.p`
   bottom: 0;
   padding: 15px;
   box-sizing: border-box;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
   width: 100%;
   color: white;
   font-weight: bold;
+  font-size: 1.25rem;
 `
 
 const Content = styled.div`
   padding: 25px;
   box-sizing: border-box;
+  flex: 1;
 
   & > p:not(:last-child) {
     padding-bottom: 10px;
@@ -45,13 +54,13 @@ const P = styled.p`
   font-size: 1.15rem;
 `
 
-function Plan({ backgroundColor, image, name, content }) {
+function Plan({ backgroundColor, image, name, content, onClick }) {
   const renderConent = (content) => {
     return content.split(' / ').map((text) => <P>{text}</P>)
   }
 
   return (
-    <Wrapper backgroundColor={backgroundColor}>
+    <Wrapper backgroundColor={backgroundColor} onClick={onClick}>
       <Img src={image}>
         <Name>{name}</Name>
       </Img>

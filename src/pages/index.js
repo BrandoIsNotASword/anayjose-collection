@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import { AiFillCheckCircle } from 'react-icons/ai'
 import styled from 'styled-components'
@@ -10,6 +10,8 @@ import Plan from '../components/plan'
 import CollectionItem from '../components/collectionItem'
 import Benefit from '../components/benefit'
 import Button from '../components/button'
+import Section from '../components/section'
+import Booking from '../components/booking'
 
 import results from '../images/benefit-results.png'
 import work from '../images/benefit-work.png'
@@ -34,7 +36,7 @@ import collectionTours from '../images/collection-tours.jpg'
 import collectionWeekly from '../images/collection-weekly.jpg'
 
 const MIN_WIDTH = '768px'
-const MIN_WIDTH_MD = '1024px'
+const MIN_WIDTH_MD = '1280px'
 
 const Title = styled.p`
   font-size: 1.65em;
@@ -69,15 +71,6 @@ const P = styled.p`
   }
 `
 
-const SectionPresentation = styled.section`
-  background-color: ${(props) => props.backgroundColor};
-  max-width: ${MIN_WIDTH_MD};
-  padding: 50px 25px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  width: 100%;
-`
-
 const Separator = styled.div`
   width: 100%;
   height: 1px;
@@ -86,16 +79,42 @@ const Separator = styled.div`
   margin: 25px auto;
 `
 
-const Features = styled.div`
+const Grid = styled.div`
   display: grid;
   grid-gap: 32px;
   grid-template-columns: auto;
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `
 
 const Plans = styled.div`
   display: grid;
   grid-gap: 32px;
   grid-template-columns: auto;
+
+  @media (min-width: ${MIN_WIDTH}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+`
+
+const Collections = styled.div`
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: auto;
+
+  @media (min-width: ${MIN_WIDTH}) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (min-width: ${MIN_WIDTH_MD}) {
+    grid-template-columns: auto auto auto;
+  }
 `
 
 const Ul = styled.ul`
@@ -108,41 +127,22 @@ const Ul = styled.ul`
 const Li = styled.li`
   margin-top: 10px;
   display: flex;
+  align-items: center;
 `
 
 function IndexPage() {
   const intl = useIntl().formatMessage
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Layout>
       <SEO title={intl({ id: 'title' })} description={intl({ id: 'description' })} />
-      <SectionPresentation>
-        <Title>WHY STAY WITH US?</Title>
-        <Separator />
-        <Features>
-          <Feature
-            src={results}
-            title="GUARANTEED RESULTS"
-            description="Our unique structure combines the highest quality guests with guaranteed revenue for our property partners."
-          />
-          <Feature
-            src={work}
-            title="WE DO ALL THE WORK"
-            description="From marketing and booking to customer service, housekeeping, and maintenance never worry abour your home again."
-          />
-          <Feature
-            src={luxury}
-            title="A LUXURY BRAND"
-            description="We focus exclusively on luxury vacation homes, elevating them to meet our comprehensive brand standards."
-          />
-        </Features>
-      </SectionPresentation>
-      <SectionPresentation backgroundColor="#f2f2f2">
+      <Section id="how" backgroundColor="#f2f2f2">
         <Title>
           HOW IT WORKS? <span>Your membership gives you a full private club experience.</span>
         </Title>
         <Separator />
-        <Features>
+        <Grid>
           <Feature
             src={explore}
             title="JOY & EXPLORE"
@@ -158,10 +158,16 @@ function IndexPage() {
             title="ENJOY"
             description="Enjoy with your love ones and add beneficiaries."
           />
-        </Features>
-      </SectionPresentation>
-      <SectionPresentation>
-        <Title>MEMBERSHIP PLANS</Title>
+        </Grid>
+      </Section>
+      <Section id="plans">
+        <Title>
+          MEMBERSHIP PLANS
+          <span>
+            You’re finally here, the best hotel in Tulum. You made to our charming spot, the place
+            of your dreams.
+          </span>
+        </Title>
         <Separator />
         <Plans>
           <Plan
@@ -169,31 +175,59 @@ function IndexPage() {
             image={planGarden}
             name="GARDEN PLAN"
             content="100 NIGHTS PROGRAM / GARDEN VIEW SUITE / *3 NIGHTS STAY MINIMUM"
+            onClick={() => setIsOpen(true)}
           />
           <Plan
             backgroundColor="#bc8350"
             image={planResidence}
             name="RESIDENCE PLAN"
             content="200 NIGHTS PROGRAM / 2 BEDROOM SUITE / *3 NIGHTS STAY MINIMUM"
+            onClick={() => setIsOpen(true)}
           />
           <Plan
             backgroundColor="#814e20"
             image={planCoba}
             name="COBA PLAN"
             content="200 NIGHTS PROGRAM / VILLA COBA / *3 NIGHTS STAY MINIMUM"
+            onClick={() => setIsOpen(true)}
           />
           <Plan
             backgroundColor="#385745"
             image={planLuxury}
             name="LUXURY PLAN"
             content="UNLIMITED NIGHTS PROGRAM / CASA DE AGUA / *3 NIGHTS STAY MINIMUM"
+            onClick={() => setIsOpen(true)}
           />
         </Plans>
-      </SectionPresentation>
-      <SectionPresentation backgroundColor="#f2f2f2">
-        <Title>OUR COLLECTION</Title>
+      </Section>
+      <Section id="why" backgroundColor="#f2f2f2">
+        <Title>WHY STAY WITH US?</Title>
         <Separator />
-        <Features>
+        <Grid>
+          <Feature
+            src={results}
+            title="GUARANTEED RESULTS"
+            description="Our unique structure combines the highest quality guests with guaranteed revenue for our property partners."
+          />
+          <Feature
+            src={work}
+            title="WE DO ALL THE WORK"
+            description="From marketing and booking to customer service, housekeeping, and maintenance never worry abour your home again."
+          />
+          <Feature
+            src={luxury}
+            title="A LUXURY BRAND"
+            description="We focus exclusively on luxury vacation homes, elevating them to meet our comprehensive brand standards."
+          />
+        </Grid>
+      </Section>
+      <Section id="collection">
+        <Title>
+          OUR COLLECTION{' '}
+          <span>Don’t just book a vacation. Become member of a luxurious boutique lifestyle.</span>
+        </Title>
+        <Separator />
+        <Collections>
           <CollectionItem
             background={collectionResidences}
             content="THE RESIDENCES LUXURY VACATION HOMES"
@@ -211,100 +245,99 @@ function IndexPage() {
           />
           <CollectionItem background={collectionTours} content="WORLDWIDE TOURS & TRAVELS" />
           <CollectionItem background={collectionCruises} content="EXCLUSIVE CRUISES" />
-        </Features>
-      </SectionPresentation>
-      <SectionPresentation>
+        </Collections>
+      </Section>
+      <Section id="benefits" backgroundColor="#f2f2f2">
         <Title>
           HOW IT WORKS? <span>Your membership gives you a full private club experience.</span>
         </Title>
         <Separator />
-        <Features>
-          <Benefit
-            icon={marketplace}
-            content={
-              <div>
-                <P>
-                  <b>MARKETPLACE: </b>A private platform for members to rent and bid on vacations
-                  weeks. If you are a timeshare owner, have members bid on your week and allow the
-                  best offer to win.
-                </P>
-                <Ul>
-                  <Li>
-                    <AiFillCheckCircle
-                      size="1.35rem"
-                      color="#3a5544"
-                      style={{ flexShrink: 0, marginRight: '5px' }}
-                    />
-                    <P>Search hundreds of weeks worldwide.</P>
-                  </Li>
-                  <Li>
-                    <AiFillCheckCircle
-                      size="1.35rem"
-                      color="#3a5544"
-                      style={{ flexShrink: 0, marginRight: '5px' }}
-                    />
-                    <P>Rent right away or make an offer.</P>
-                  </Li>
-                  <Li>
-                    <AiFillCheckCircle
-                      size="1.35rem"
-                      color="#3a5544"
-                      style={{ flexShrink: 0, marginRight: '5px' }}
-                    />
-                    <P>Negotiate to pay the price you want.</P>
-                  </Li>
-                  <Li>
-                    <AiFillCheckCircle
-                      size="1.35rem"
-                      color="#3a5544"
-                      style={{ flexShrink: 0, marginRight: '5px' }}
-                    />
-                    <P>Get a week below market value.</P>
-                  </Li>
-                  <Li>
-                    <AiFillCheckCircle
-                      size="1.35rem"
-                      color="#3a5544"
-                      style={{ flexShrink: 0, marginRight: '5px' }}
-                    />
-                    <P>Place your week for rent.</P>
-                  </Li>
-                </Ul>
-              </div>
-            }
-          />
-          <Benefit
-            icon={car}
-            content={
+        <Benefit
+          icon={marketplace}
+          content={
+            <div>
               <P>
-                <b>RENTAL CARS: </b> You can rent a car for a fraction of the retail price with your
-                membership. Book the same day or in advance with pickup and drop-off locations
-                available throughout the United States, Mexico, Canada, Europe, and anywhere you are
-                traveling. Renting a car has never been so affordable and easy.
+                <b>MARKETPLACE: </b>A private platform for members to rent and bid on vacations
+                weeks. If you are a timeshare owner, have members bid on your week and allow the
+                best offer to win.
               </P>
-            }
-          />
-          <Benefit
-            icon={flight}
-            content={
-              <P>
-                <b>FLIGHTS: </b> Your membership offers you the ability to book flights in both
-                money and reward credits. Booking flights through your membership helps you earn
-                double or triple rewards each time you fly. You earn reward credits with every
-                flight you book. Additionally, you may receive frequent flyer miles and earn rewards
-                back from your credit card.
-              </P>
-            }
-          />
-        </Features>
+              <Ul>
+                <Li>
+                  <AiFillCheckCircle
+                    size="1.25rem"
+                    color="#3a5544"
+                    style={{ flexShrink: 0, marginRight: '5px' }}
+                  />
+                  <P>Search hundreds of weeks worldwide.</P>
+                </Li>
+                <Li>
+                  <AiFillCheckCircle
+                    size="1.25rem"
+                    color="#3a5544"
+                    style={{ flexShrink: 0, marginRight: '5px' }}
+                  />
+                  <P>Rent right away or make an offer.</P>
+                </Li>
+                <Li>
+                  <AiFillCheckCircle
+                    size="1.25rem"
+                    color="#3a5544"
+                    style={{ flexShrink: 0, marginRight: '5px' }}
+                  />
+                  <P>Negotiate to pay the price you want.</P>
+                </Li>
+                <Li>
+                  <AiFillCheckCircle
+                    size="1.25rem"
+                    color="#3a5544"
+                    style={{ flexShrink: 0, marginRight: '5px' }}
+                  />
+                  <P>Get a week below market value.</P>
+                </Li>
+                <Li>
+                  <AiFillCheckCircle
+                    size="1.25rem"
+                    color="#3a5544"
+                    style={{ flexShrink: 0, marginRight: '5px' }}
+                  />
+                  <P>Place your week for rent.</P>
+                </Li>
+              </Ul>
+            </div>
+          }
+        />
+        <Benefit
+          icon={car}
+          content={
+            <P>
+              <b>RENTAL CARS: </b> You can rent a car for a fraction of the retail price with your
+              membership. Book the same day or in advance with pickup and drop-off locations
+              available throughout the United States, Mexico, Canada, Europe, and anywhere you are
+              traveling. Renting a car has never been so affordable and easy.
+            </P>
+          }
+        />
+        <Benefit
+          icon={flight}
+          content={
+            <P>
+              <b>FLIGHTS: </b> Your membership offers you the ability to book flights in both money
+              and reward credits. Booking flights through your membership helps you earn double or
+              triple rewards each time you fly. You earn reward credits with every flight you book.
+              Additionally, you may receive frequent flyer miles and earn rewards back from your
+              credit card.
+            </P>
+          }
+        />
         <Button
           href="https://anayjose.com/friends-and-family"
-          style={{ marginTop: '32px' }}
+          style={{ marginTop: '32px', maxWidth: '320px', display: 'inline-block' }}
           target="_blank"
         >
           Get a membership
         </Button>
-      </SectionPresentation>
+      </Section>
+      <Booking isOpen={isOpen} onCloseModal={() => setIsOpen(false)} />
     </Layout>
   )
 }

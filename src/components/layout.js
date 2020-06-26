@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import styled, { createGlobalStyle } from 'styled-components'
 import { initializeIcons } from '@uifabric/icons'
@@ -67,7 +67,6 @@ const Main = styled.main`
   margin: 0 auto;
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 90%, rgba(255, 255, 255, 0) 100%);
-  max-width: 1280px;
 `
 
 const Hero = styled.div`
@@ -104,7 +103,7 @@ const HeroTitle = styled.h1`
   margin-top: 0px;
 
   @media (min-width: ${MIN_WIDTH}) {
-    font-size: 1.75rem;
+    font-size: 4rem;
   }
 `
 
@@ -115,6 +114,10 @@ const HeroSubtitle = styled.h2`
   font-weight: normal;
   margin-top: 0;
   margin-bottom: 32px;
+
+  @media (min-width: ${MIN_WIDTH}) {
+    font-size: 1.85rem;
+  }
 `
 
 const Footer = styled.footer`
@@ -165,7 +168,6 @@ const FloatButton = styled.a`
 
 function Layout({ children }) {
   const intl = useIntl().formatMessage
-  const [clicked, setClicked] = useState(false)
 
   return (
     <MainWrapper>
@@ -174,9 +176,7 @@ function Layout({ children }) {
       <Hero>
         <HeroTitle>{intl({ id: 'hero.title' })}</HeroTitle>
         <HeroSubtitle>{intl({ id: 'hero.subtitle' })}</HeroSubtitle>
-        <HeroButton href="#form" onClick={() => setClicked(true)}>
-          {intl({ id: 'hero.button' })}
-        </HeroButton>
+        <HeroButton href="#plans">{intl({ id: 'hero.button' })}</HeroButton>
       </Hero>
       <Wrapper>
         <Main>{children}</Main>

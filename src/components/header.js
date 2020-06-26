@@ -21,11 +21,6 @@ const Wrapper = styled.header`
   padding-bottom: 0;
   width: 100%;
   flex-direction: column;
-
-  @media (min-width: ${MIN_WIDTH}) {
-    height: 110px;
-    padding: 25px 80px;
-  }
 `
 
 const LinkLogo = styled.a`
@@ -62,14 +57,24 @@ const Nav = styled.nav`
   width: 100%;
   margin-left: -15px;
   margin-right: -15px;
+
+  @media (min-width: 1024px) {
+    margin: 0;
+    justify-content: center;
+  }
 `
 
 const NavLink = styled.a`
   box-sizing: border-box;
-  color: gray;
+  color: black;
   text-decoration: none;
   flex-shrink: 0;
-  padding: 15px 10px;
+  padding: 15px;
+  opacity: 0.65;
+
+  &:hover {
+    opacity: 0.85;
+  }
 `
 
 function Header() {
@@ -94,11 +99,10 @@ function Header() {
         </IntlContextConsumer>
       </LangOptions>
       <Nav>
-        <NavLink href="#why">WHY STAY WITH US?</NavLink>
         <NavLink href="#how">HOW IT WORKS?</NavLink>
         <NavLink href="#plans">MEMBERSHIP PLANS</NavLink>
+        <NavLink href="#why">WHY STAY WITH US?</NavLink>
         <NavLink href="#collection">OUR COLLECTION</NavLink>
-        <NavLink href="#destinations">TOP DESTINATIONS</NavLink>
         <NavLink href="#benefits">MEMBERSHIP BENEFITS</NavLink>
       </Nav>
     </Wrapper>
