@@ -23,6 +23,7 @@ const Title = styled.p`
 const Description = styled.p`
   opacity: 0.75;
   text-align: center;
+  font-size: 1.25rem;
 `
 
 function Feature({ src, title, description }) {

@@ -65,10 +65,6 @@ const P = styled.p`
   opacity: 0.75;
   margin-top: 0;
   max-width: 980px;
-
-  @media (min-width: ${MIN_WIDTH_MD}) {
-    font-size: 1.5rem;
-  }
 `
 
 const Separator = styled.div`
@@ -133,6 +129,22 @@ const Li = styled.li`
 function IndexPage() {
   const intl = useIntl().formatMessage
   const [isOpen, setIsOpen] = useState(false)
+  const [promotion, setPromotion] = useState('')
+  const [checkIn, setCheckIn] = useState('')
+  const [checkOut, setCheckOut] = useState('')
+
+  const onClickPlan = (promotion) => {
+    const checkIn = new Date()
+    const checkOut = new Date()
+
+    checkOut.setDate(checkOut.getDate() + 3)
+
+    setPromotion(promotion)
+    setCheckIn(checkIn.toISOString().split('T')[0])
+    setCheckOut(checkOut.toISOString().split('T')[0])
+
+    setIsOpen(true)
+  }
 
   return (
     <Layout>
@@ -172,28 +184,28 @@ function IndexPage() {
             image={planGarden}
             name={intl({ id: 'plans.features.garden.title' })}
             content={intl({ id: 'plans.features.garden.content' })}
-            onClick={() => setIsOpen(true)}
+            onClick={() => onClickPlan('promotion/CLUBGARDEN/')}
           />
           <Plan
             backgroundColor="#bc8350"
             image={planResidence}
             name={intl({ id: 'plans.features.residence.title' })}
             content={intl({ id: 'plans.features.residence.content' })}
-            onClick={() => setIsOpen(true)}
+            onClick={() => onClickPlan('promotion/CLUBRESIDENCIAS/')}
           />
           <Plan
             backgroundColor="#814e20"
             image={planCoba}
             name={intl({ id: 'plans.features.coba.title' })}
             content={intl({ id: 'plans.features.coba.content' })}
-            onClick={() => setIsOpen(true)}
+            onClick={() => onClickPlan('promotion/COBÁCLUB/')}
           />
           <Plan
             backgroundColor="#385745"
             image={planLuxury}
             name={intl({ id: 'plans.features.luxury.title' })}
             content={intl({ id: 'plans.features.luxury.content' })}
-            onClick={() => setIsOpen(true)}
+            onClick={() => (window.location.href = 'https://www.anayjose.com/casa-de-agua.html')}
           />
         </Plans>
       </Section>
@@ -336,7 +348,13 @@ function IndexPage() {
           {intl({ id: 'benefits.button' })}
         </Button>
       </Section>
-      <Booking isOpen={isOpen} onCloseModal={() => setIsOpen(false)} />
+      <Booking
+        isOpen={isOpen}
+        promotion={promotion}
+        checkIn={checkIn}
+        checkOut={checkOut}
+        onCloseModal={() => setIsOpen(false)}
+      />
     </Layout>
   )
 }

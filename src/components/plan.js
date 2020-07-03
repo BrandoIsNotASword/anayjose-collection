@@ -1,6 +1,7 @@
 import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import styled from 'styled-components'
+import { v4 } from 'uuid'
 
 import Button from '../components/button'
 
@@ -59,7 +60,7 @@ function Plan({ backgroundColor, image, name, content, onClick }) {
   const intl = useIntl().formatMessage
 
   const renderConent = (content) => {
-    return content.split(' / ').map((text) => <P>{text}</P>)
+    return content.split(' / ').map((text) => <P key={v4()}>{text}</P>)
   }
 
   return (
